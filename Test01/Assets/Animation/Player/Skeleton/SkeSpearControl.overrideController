@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SkeSpearControl
+  m_Controller: {fileID: 9100000, guid: e23c2a62e7c045d4685125d4fb2b2444, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: aa97cddb1fac80f4799ef390d87a9b98, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: aa97cddb1fac80f4799ef390d87a9b98, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 15964414d56dcd943af7f45e23042901, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 15964414d56dcd943af7f45e23042901, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7e8838577907b6b49adad8cf5d5d7e25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7e8838577907b6b49adad8cf5d5d7e25, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 9925b41075126714183b4cb1d36b219d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4623e94bc0f0e954899652dbb3939ea1, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 70ae446c164eae644a3175c3e7dd3461, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 70ae446c164eae644a3175c3e7dd3461, type: 2}
