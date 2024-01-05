@@ -769,7 +769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04f9b4c3559c584caacf17963e52fd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 16
   obj: {fileID: 6060484469802144103}
   demage: 1
   body: {fileID: 3096840456986909551}
@@ -1150,9 +1149,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigid: {fileID: 0}
   stun: 4
+  isAnim: 0
   isHit: 0
   isAlive: 1
   HitZone: {fileID: 0}
+  hited: 0
+  health: 16
+  Shielding: 0
 --- !u!114 &613273146163075607
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
 
+
+
+
 public class Enemy : MonoBehaviour
 {
+    public enum State { ArrowHit, Melee1, Melee2, Shielding, Small }
+    
     SpriteRenderer spriteRenderer;
     public Rigidbody2D rigid;
     [SerializeField] float stun;
@@ -19,10 +24,15 @@ public class Enemy : MonoBehaviour
 
     public GameObject HitZone = default;
 
+    public bool hited;
+    [SerializeField] public int health;
+    [SerializeField] public bool Shielding = false;
+
+    public int demage;
 
     //[SerializeField] public float stun;
     // Start is called before the first frame update
-    private void Awake()
+    public void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
     }
@@ -52,7 +62,20 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        if (hited)
+        {
+            SoundManager.Instance.SFXHitPlay("Hit", transform.position, 0.5f, 10f);
+            HitByPlayer();
+            health -= demage;
+            if (health <= 0)
+            {
+                DestroyEnemy();
+            }
 
+            hited = false;
+        }
+
+        
     }
     
 

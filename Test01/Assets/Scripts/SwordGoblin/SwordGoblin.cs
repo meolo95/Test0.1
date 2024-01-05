@@ -35,12 +35,12 @@ public class SwordGoblin : MonoBehaviour
     {
         if (isShield)
         {
-            hitZone.GetComponent<Health>().Shielding = true;
+            enemy.Shielding = true;
 
         }
         else
         {
-            hitZone.GetComponent<Health>().Shielding = false;
+            enemy.Shielding = false;
         }
 
         if (enemy.isAlive)

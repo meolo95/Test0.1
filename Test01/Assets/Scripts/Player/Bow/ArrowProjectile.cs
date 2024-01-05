@@ -71,23 +71,6 @@ public class ArrowProjectile : MonoBehaviour
         {
             if (otherObject.GetComponent<Health>().Shielding == false && otherObject.GetComponent<Health>().isSmall == false)
             {
-                GameObject sharedParent = new GameObject("Father");
-                //GameObject sharedParent = PoolManager.Instance.GetGo("HitPlace");
-                sharedParent.transform.position = otherObject.GetComponent<Health>().body.transform.position;
-                sharedParent.transform.rotation = otherObject.GetComponent<Health>().body.transform.rotation;
-                sharedParent.transform.SetParent(otherObject.GetComponent<Health>().body.transform);
-
-                Vector3 hitpos = transform.position;
-                hitpos += transform.right * 0.2f;
-
-                GameObject newArrows = Instantiate(usedArrow, hitpos, transform.rotation);
-                //GameObject newArrows = PoolManager.Instance.GetGo("UsedArrow");
-                //newArrows.transform.position = hitpos;
-                //newArrows.transform.rotation = transform.rotation;
-                newArrows.transform.SetParent(sharedParent.transform, true);
-                newArrows.GetComponent<UsedArrow>().isEnemy = true;
-                Destroy(gameObject);
-                //pooler.ReleaseObject();
                 attackZone.isUsed = false;
             }
 
