@@ -468,6 +468,7 @@
 "Assets/Scripts/MeleeGoblin/MeleeGoblin.cs"
 "Assets/Scripts/MeleeGoblin/MeleeGoblinAttack.cs"
 "Assets/Scripts/MeleeGoblin/MeleeGoblinTargeting.cs"
+"Assets/Scripts/NewManager/NewEnemy.cs"
 "Assets/Scripts/Obstacle/BladeObsMove.cs"
 "Assets/Scripts/Obstacle/Bush.cs"
 "Assets/Scripts/Obstacle/BushIn.cs"

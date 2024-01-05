@@ -10,13 +10,24 @@ public class Health : MonoBehaviour
     [SerializeField] public int health;
     [SerializeField] GameObject obj;
     [SerializeField] public int demage;
+    //Enemy enemy;
 
     [SerializeField] public GameObject body;
+    
+    
+    // get set private
+    //
+
 
     [SerializeField] public bool Shielding = false;
     [SerializeField] public bool isSmall;
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        //enemy = GetComponent<Enemy>();
+    }
+
     void Start()
     {
         //enemy = GameObject.Find("Enemy");
@@ -25,6 +36,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     public void DemageEnemy(int amount)

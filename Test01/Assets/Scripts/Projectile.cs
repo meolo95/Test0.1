@@ -8,6 +8,9 @@ using static UnityEditor.PlayerSettings;
 
 public class Projectile : MonoBehaviour
 {
+    //상속관계
+    //의존성 감소
+    //
 
     Rigidbody2D rigid;
     [SerializeField] float speed;
@@ -98,7 +101,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Platform")
+        if (collision.gameObject.CompareTag("Platform"))
         {
             if (isCol == true)
             {

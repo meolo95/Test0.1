@@ -33,10 +33,12 @@ public class AttackZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //collision.TryGetComponent<Health>(out Health )  
         if(collision.GetComponent<Health>() != null)
         {
             if (isUsed == false)
