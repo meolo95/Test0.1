@@ -30,10 +30,7 @@ public interface IEtc
 {
     void Etc();
 }
-public interface IShield
-{
-    void Shield();
-}
+
 public enum EnemyState
 {
     moving,
@@ -53,12 +50,7 @@ public enum EnemyLife
     dying
 }
 
-public enum EnemyShield
-{
-    on,
-    off,
-    breakTime
-}
+
 
 public class EnemyManage
 {

@@ -544,6 +544,7 @@
 "Assets/Scripts/test0.1/EnemyTargetCheck.cs"
 "Assets/Scripts/test0.1/PAttack.cs"
 "Assets/Scripts/test0.1/Player/PlayerBehaviour.cs"
+"Assets/Scripts/test0.1/Player/PlayerGB.cs"
 "Assets/Scripts/test0.1/Player/PlayerManage.cs"
 "Assets/Scripts/test0.1/Public/PublicVoid.cs"
 "Assets/Scripts/UI/LevelManager.cs"

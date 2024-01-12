@@ -22,6 +22,9 @@ public class EnemyBehavior : MonoBehaviour
 
     Rigidbody2D rigid;
     
+    //UNIT - PLAYER, ENEMY, - HIT MOVE (INTERFACE) -에셋번들 어드레서블 에셋-
+    // 오브젝트 풀 처음부터 적용해서 만들기
+    //컴포넌트를 몬스터 행동별로 나누긴 했지만, 애니메이션은 애니메이션대로, 사운드는 사운드대로 컴포넌트를 또다시 나눠준다.
 
     public EnemyState state;
     public EnemyLife life;

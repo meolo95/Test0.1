@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public enum KeyAction { Shoot, Attack1, Attack2, Jump, Left, Right, Down, Roll, Up, Hook, KeyCount}
+public enum KeyAction { Shoot, Attack1, Attack2, Jump, Left, Right, Down, Roll, Up, Hook }
 
 public static class KeySetting { public static Dictionary<KeyAction, KeyCode>keys = new Dictionary<KeyAction, KeyCode>();}
 public class KeyManager : MonoBehaviour
@@ -32,7 +32,7 @@ public class KeyManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i <(int)KeyAction.KeyCount; i++)
+        for (int i = 0; i <(int)KeyAction.Hook + 1; i++)
         {
             KeySetting.keys.Add((KeyAction)i, defaultKeys[i]);
         }
