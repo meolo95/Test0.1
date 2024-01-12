@@ -5,11 +5,11 @@ using UnityEngine;
 
 public class SwordGoblinSense : MonoBehaviour
 {
-    [SerializeField] GameObject swordGoblin;
+    Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        
+        anim = GetComponentInParent<Animator>();
     }
 
     // Update is called once per frame
@@ -22,8 +22,7 @@ public class SwordGoblinSense : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            swordGoblin.GetComponent<SwordGoblin>().isSense = true;
-            swordGoblin.GetComponent<SwordGoblin>().anim.SetBool("IsSense", true);
+            anim.SetBool("IsSense", true);
         }
     }
 
@@ -31,8 +30,7 @@ public class SwordGoblinSense : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            swordGoblin.GetComponent<SwordGoblin>().isSense = false;
-            swordGoblin.GetComponent<SwordGoblin>().anim.SetBool("IsSense", false);
+            anim.SetBool("IsSense", false);
         }
     }
 }

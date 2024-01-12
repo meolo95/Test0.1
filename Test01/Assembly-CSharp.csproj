@@ -58,6 +58,8 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\test0.1\EDie\EnemyDie.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EMove\EnemyJump.cs" />
     <Compile Include="Assets\Scripts\Slime\Slime.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinMove.cs" />
     <Compile Include="Assets\Scripts\GameSystem\SettingManager.cs" />
@@ -75,6 +77,7 @@
     <Compile Include="Assets\Scripts\BowGoblin\BowGoblinTargeting.cs" />
     <Compile Include="Assets\Scripts\Player\Spear\UsedSpear.cs" />
     <Compile Include="Assets\Scripts\UI\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyManage.cs" />
     <Compile Include="Assets\Scripts\Bee\Bee.cs" />
     <Compile Include="Assets\Scripts\Obstacle\RockInst.cs" />
     <Compile Include="Assets\Scripts\GoblinRider\GoblinRiderCollision.cs" />
@@ -82,10 +85,12 @@
     <Compile Include="Assets\Scripts\BackGround\BackGround.cs" />
     <Compile Include="Assets\Scripts\Obstacle\CampFire.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblin.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EHit\EnemyHit.cs" />
     <Compile Include="Assets\Scripts\Obstacle\WeakGround.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeTargeting.cs" />
     <Compile Include="Assets\Scripts\SwordBat\SBAttack.cs" />
     <Compile Include="Assets\Scripts\GoblinRider\GoblinRiderMove.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EAttack\EnemyRushJump.cs" />
     <Compile Include="Assets\Scripts\Player\Spear\SpearProjectile.cs" />
     <Compile Include="Assets\Scripts\GameSystem\PUIControl.cs" />
     <Compile Include="Assets\Scripts\GameSystem\KeyManager.cs" />
@@ -99,6 +104,7 @@
     <Compile Include="Assets\Scripts\Boar\BoarTargeting.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\HpBarScript.cs" />
     <Compile Include="Assets\Scripts\Bee\BeeMove.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Public\PublicVoid.cs" />
     <Compile Include="Assets\Scripts\Obstacle\Bush.cs" />
     <Compile Include="Assets\Scripts\GameSystem\FillHeart.cs" />
     <Compile Include="Assets\Scripts\Player\Bow\ArrowProjectile.cs" />
@@ -109,6 +115,7 @@
     <Compile Include="Assets\Scripts\Obstacle\BladeObsMove.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeMove.cs" />
     <Compile Include="Assets\Scripts\GameSystem\EnemySpawnByPlayer.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyArrowCatch.cs" />
     <Compile Include="Assets\Scripts\BowGoblin\BowGoblin.cs" />
     <Compile Include="Assets\Scripts\Attached.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\UsingSpear.cs" />
@@ -125,10 +132,15 @@
     <Compile Include="Assets\Scripts\EmemyManager\EnemyManager.cs" />
     <Compile Include="Assets\Scripts\BowGoblin\BowGoblinMove.cs" />
     <Compile Include="Assets\Scripts\Player\HookControl.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EAttack\EnemyMelee.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyStop.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Player\PlayerBehaviour.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinTargeting.cs" />
     <Compile Include="Assets\Scripts\WalkingSC\WSC.cs" />
     <Compile Include="Assets\Scripts\BowGoblin\BowGoblinThrow.cs" />
     <Compile Include="Assets\Scripts\Obstacle\WGTrigger.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyTargetCheck.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EDie\EnemySummon.cs" />
     <Compile Include="Assets\Scripts\GreenMushroom\GMTargeting.cs" />
     <Compile Include="Assets\Scripts\Attached1.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerLine.cs" />
@@ -147,8 +159,11 @@
     <Compile Include="Assets\Scripts\SwordGoblin\ShieldCatch.cs" />
     <Compile Include="Assets\Scripts\MeleeGoblin\MeleeGoblinTargeting.cs" />
     <Compile Include="Assets\Scripts\GameSystem\Ending.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyHitZone.cs" />
+    <Compile Include="Assets\Scripts\test0.1\PAttack.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\PublicProjectile.cs" />
     <Compile Include="Assets\Scripts\Manager\PoolManager.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EAttack\EnemyThrow.cs" />
     <Compile Include="Assets\Scripts\BossCentipede\BCHide.cs" />
     <Compile Include="Assets\Scripts\EnemySpawner.cs" />
     <Compile Include="Assets\Scripts\SwordGoblin\SwordGoblinAttack.cs" />
@@ -156,6 +171,7 @@
     <Compile Include="Assets\Scripts\SwordBat\SBSkul.cs" />
     <Compile Include="Assets\Scripts\Spider\SpiderTarget.cs" />
     <Compile Include="Assets\Scripts\SkulCentipede\SCTarget.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyBehavior.cs" />
     <Compile Include="Assets\Scripts\PlayerCollisionCheck.cs" />
     <Compile Include="Assets\Scripts\Spider\SpiderWalk.cs" />
     <Compile Include="Assets\Scripts\Slime\SlimeJump.cs" />
@@ -163,6 +179,7 @@
     <Compile Include="Assets\Scripts\SpearGoblin\ThrownSpear.cs" />
     <Compile Include="Assets\Scripts\Boar\BoarRigid.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\HitByP.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Player\PlayerManage.cs" />
     <Compile Include="Assets\Scripts\Slime\SlimeChase.cs" />
     <Compile Include="Assets\Scripts\BossCentipede\BCLightTarget.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
@@ -175,8 +192,10 @@
     <Compile Include="Assets\Scripts\BowGoblin\UsingArrow.cs" />
     <Compile Include="Assets\Scripts\Bee\BeeTargeting.cs" />
     <Compile Include="Assets\FullScreenFX\Scripts\MaterialPropertyController.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EAttack\EnemyRush.cs" />
     <Compile Include="Assets\Scripts\SwordGoblin\BlockedArrow.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\NotFall.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EMove\EnemyRoaming.cs" />
     <Compile Include="Assets\Scripts\MeleeGoblin\MeleeGoblin.cs" />
     <Compile Include="Assets\Scripts\Manager\Pooler.cs" />
     <Compile Include="Assets\Scripts\UI\LevelManager.cs" />
@@ -185,6 +204,7 @@
     <Compile Include="Assets\Scripts\EmemyManager\Throw.cs" />
     <Compile Include="Assets\Scripts\GreenMushroom\GMRun.cs" />
     <Compile Include="Assets\Scripts\Player\Bow\BowAttack.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyShielding.cs" />
     <Compile Include="Assets\Scripts\Boar\Boar.cs" />
     <Compile Include="Assets\Scripts\Obstacle\StoneBlock.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerComp.cs" />

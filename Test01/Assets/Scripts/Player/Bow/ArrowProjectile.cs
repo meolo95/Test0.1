@@ -69,22 +69,40 @@ public class ArrowProjectile : MonoBehaviour
 
         if (otherObject.tag == "HitZone")
         {
-            if (otherObject.GetComponent<Health>().Shielding == false && otherObject.GetComponent<Health>().isSmall == false)
-            {
-                attackZone.isUsed = false;
-            }
 
-            if (otherObject.GetComponent<Health>().Shielding == true)
+            GameObject sharedParent = new GameObject("Father");
+            //GameObject sharedParent = PoolManager.Instance.GetGo("HitPlace");
+            sharedParent.transform.position = otherObject.transform.position;
+            sharedParent.transform.rotation = otherObject.transform.rotation;
+            sharedParent.transform.SetParent(otherObject.gameObject.transform);
+
+            Vector3 hitpos = transform.position;
+            hitpos += transform.right * 0.5f;
+
+            if (otherObject.GetComponentInParent<EnemyBehavior>() != null && otherObject.GetComponentInParent<EnemyBehavior>().isDevine == false)
             {
-                Vector3 hitpos = transform.position;
-                hitpos += transform.right * 0.2f;
-                GameObject newArrows = Instantiate(blockedArrow, transform.position, transform.rotation);
-                newArrows.GetComponent<BlockedArrow>().enemyX = hitpos.x;
-                //pooler.ReleaseObject();
-                attackZone.isUsed = false;
-                Destroy(gameObject);
+                GameObject newArrows = Instantiate(usedArrow, hitpos, transform.rotation);
+                newArrows.transform.SetParent(sharedParent.transform, true);
             }
-            //Destroy(newArrows, 3f);
+            else if (otherObject.GetComponentInParent<EnemyBehavior>() != null && otherObject.GetComponentInParent<EnemyBehavior>().isDevine == true)
+            {
+                GameObject newArrows = Instantiate(blockedArrow, hitpos, transform.rotation);
+                //newArrows.transform.SetParent(sharedParent.transform, true);
+            }
+            else
+            {
+                GameObject newArrows = Instantiate(usedArrow, hitpos, transform.rotation);
+                newArrows.transform.SetParent(sharedParent.transform, true);
+            }
+            
+            //GameObject newArrows = PoolManager.Instance.GetGo("UsedArrow");
+            //newArrows.transform.position = hitpos;
+            //newArrows.transform.rotation = transform.rotation;
+            
+            //pooler.ReleaseObject();
+            Destroy(gameObject);
+
+            
 
 
         }
