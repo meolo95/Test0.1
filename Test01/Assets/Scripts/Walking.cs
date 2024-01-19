@@ -34,7 +34,7 @@ public class Walking : MonoBehaviour
 
     public AudioClip[] clips;
 
-
+    //½ÃÄö½º ¼¿·ºÅÍ
 
     // Start is called before the first frame update
     void Start()

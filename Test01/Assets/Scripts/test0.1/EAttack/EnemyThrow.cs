@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyThrow : MonoBehaviour, IAttack
+public class EnemyThrow : MonoBehaviour, IAttack, IBreak
 {
     [SerializeField] GameObject projectile;
     [SerializeField] float delay;
@@ -29,6 +29,11 @@ public class EnemyThrow : MonoBehaviour, IAttack
         //Instantiate(projectile, new Vector2(0f, 0f), Quaternion.identity);
     }
 
+    public void Break()
+    {
+        ThrowStop();
+    }
+
     IEnumerator IEThrow;
     void ThrowStart()
     {
@@ -37,8 +42,11 @@ public class EnemyThrow : MonoBehaviour, IAttack
     }
     void ThrowStop()
     {
-        StopCoroutine(IEThrow);
-        IEThrow = null;
+        if (IEThrow != null)
+        {
+            StopCoroutine(IEThrow);
+            IEThrow = null;
+        }
     }
 
     IEnumerator Throw()

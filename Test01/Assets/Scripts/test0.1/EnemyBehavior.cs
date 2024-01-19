@@ -11,6 +11,7 @@ public class EnemyBehavior : MonoBehaviour
     public IHit hitBehavior;
     private IDie dieBehavior;
     private IEtc etc;
+    private IBreak attackBreak;
 
     Animator anim;
 
@@ -42,6 +43,7 @@ public class EnemyBehavior : MonoBehaviour
         hitBehavior = GetComponent<IHit>();
         dieBehavior = GetComponent<IDie>();
         etc = GetComponent<IEtc>();
+        attackBreak = GetComponent<IBreak>();
 
         enemy = new EnemyManage(enemyname, health, demage, stun, speed);
 
@@ -75,6 +77,10 @@ public class EnemyBehavior : MonoBehaviour
                     {
                         moveBehavior.Move();
                     }
+                }
+                if (attackBreak != null)
+                {
+                    attackBreak.Break();
                 }
                 break;
             case EnemyState.targeting:

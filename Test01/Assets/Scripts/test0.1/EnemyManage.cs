@@ -30,6 +30,10 @@ public interface IEtc
 {
     void Etc();
 }
+public interface IBreak
+{
+    void Break();
+}
 
 public enum EnemyState
 {

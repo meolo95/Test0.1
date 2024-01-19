@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class EnemyDie : MonoBehaviour, IDie
 {
+    Animator anim;
+    int die;
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        die = Animator.StringToHash("IsDie");
+    }
     public void Die()
     {
         if (IEDie == null)
@@ -27,6 +34,7 @@ public class EnemyDie : MonoBehaviour, IDie
     IEnumerator WaitDie()
     {
         PlayerLocation.Instance.kills++;
+        anim.SetBool(die, true);
         yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }

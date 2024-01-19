@@ -32,8 +32,8 @@ public class EnemyMelee : MonoBehaviour, IAttack
     }
     void MeleeStop()
     {
-        IEMelee = Melee();
         StopCoroutine(IEMelee);
+        IEMelee = null;
     }
 
     IEnumerator Melee()
