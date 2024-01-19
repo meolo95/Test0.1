@@ -33,6 +33,8 @@ public class PlayerLocation : MonoBehaviour
     public bool isPlay;
     public bool isEnding;
 
+    public int dir;
+
     private void Awake()
     {
         if (Instance == null)

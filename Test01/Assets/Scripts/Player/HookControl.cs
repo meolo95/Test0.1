@@ -9,8 +9,6 @@ public class HookControl : MonoBehaviour
 {
     public Rigidbody2D rigid;
     public DistanceJoint2D joint;
-
-
     public bool isCol;
 
     Vector3 plocation;
@@ -19,11 +17,16 @@ public class HookControl : MonoBehaviour
     bool isLineMax;
     // Start is called before the first frame update
 
+    private void Awake()
+    {
+        transform.parent = null;
+    }
 
     void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         joint = GetComponent<DistanceJoint2D>();
+        
     }
 
     // Update is called once per frame

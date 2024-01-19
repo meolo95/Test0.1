@@ -31,54 +31,35 @@ public interface IDraw
 {
     void Draw();
 }
-public interface IMelee
+public interface IMelee1
 {
-    void Melee();
+    void Melee1();
+}
+public interface IMelee2
+{
+    void Melee2();
+}
+public interface IUp
+{
+    void Up();
 }
 
 
-public enum PlayerKeyDownCommand
-{
-    idle,
-    walkL,
-    walkR,
-    hook,
-    down
-}
-public enum PlayerKeyCommand
-{
-    none,
-    roll,
-    jump
-}
-public enum PlayerKeyUpDownCommand
-{
-    none,
-    draw
-}
-public enum PlayerMeleeCommand
-{
-    none,
-    melee1,
-    melee2
-}
-
-public enum PlayerCommand
+public enum PlayerState
 {
     idle,
     walk,
-    roll,
+    down,
     jump,
+    melee,
+    draw,
     hook,
-    down
+    roll,
+    hit,
+    devine
+
 }
 
-public enum Attack
-{
-    idle,
-    bow,
-    melee
-}
 
 public enum PlayerLife
 {
@@ -86,12 +67,20 @@ public enum PlayerLife
     die
 }
 
+public static class PState { public static Dictionary<PlayerState, bool> states = new Dictionary<PlayerState, bool>(); }
 public class PlayerManage
 {
-    private int health;
-    private int arrow;
-    private float speed;
-    private float jump;
+    protected int health;
+    protected int arrow;
+    protected float speed;
+    protected float jump;
+
+    protected int dir;
+
+    protected Rigidbody2D rigid;
+
+    protected PlayerLife life;
+
 
     public PlayerManage(int health, int arrow, float speed, float jump)
     {
@@ -99,6 +88,8 @@ public class PlayerManage
         this.arrow = arrow;
         this.speed = speed;
         this.jump = jump;
+
+        
     }
 
     public float GetSpeed()
