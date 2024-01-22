@@ -62,6 +62,7 @@
     <Compile Include="Assets\Scripts\test0.1\EMove\EnemyJump.cs" />
     <Compile Include="Assets\Scripts\Slime\Slime.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinMove.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Player\PlayerGB.cs" />
     <Compile Include="Assets\Scripts\GameSystem\SettingManager.cs" />
     <Compile Include="Assets\Scripts\Slime\SlimeTargeting.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\AProjectile.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Assets\Scripts\Obstacle\MovingStoneTargeting2.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\SideCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyNotFall.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BladeObsMove.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeMove.cs" />
     <Compile Include="Assets\Scripts\GameSystem\EnemySpawnByPlayer.cs" />
@@ -128,6 +130,7 @@
     <Compile Include="Assets\Scripts\SpearGoblin\UsingSpear.cs" />
     <Compile Include="Assets\Scripts\Obstacle\MovingStone.cs" />
     <Compile Include="Assets\Scripts\SwordGoblin\SwordGoblin.cs" />
+    <Compile Include="Assets\Scripts\test0.1\HitMob.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\PBehavior\PlayerRoll.cs" />
     <Compile Include="Assets\Scripts\Player\Bow\UsedArrow.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinThrow.cs" />
@@ -161,6 +164,7 @@
     <Compile Include="Assets\Scripts\EmemyManager\PublicTargeting.cs" />
     <Compile Include="Assets\Scripts\Obstacle\IceGround.cs" />
     <Compile Include="Assets\Scripts\GameSystem\MainDestroy.cs" />
+    <Compile Include="Assets\Scripts\test0.1\EnemyAction.cs" />
     <Compile Include="Assets\Scripts\Obstacle\MovingStoneTargeting.cs" />
     <Compile Include="Assets\Scripts\SwordBat\SBSense.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
@@ -238,6 +242,7 @@
     <Compile Include="Assets\Scripts\Bee\BeeLayer.cs" />
     <Compile Include="Assets\Scripts\GameSystem\FrozenCamera.cs" />
     <Compile Include="Assets\Scripts\SwordGoblin\SwordGoblinSense.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Player\PBehavior\PlayerMelee.cs" />
     <Compile Include="Assets\Scripts\ArmorGhost\AGTP.cs" />
     <Compile Include="Assets\Scripts\BossCentipede\BCMove.cs" />
   </ItemGroup>

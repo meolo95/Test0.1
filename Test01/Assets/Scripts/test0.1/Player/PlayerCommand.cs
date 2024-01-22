@@ -81,13 +81,13 @@ public class PlayerCommand : MonoBehaviour
             draw.Draw();
         }
 
-        if (!PState.states[PlayerState.melee] && !PState.states[PlayerState.roll] && !PState.states[PlayerState.draw])
+        if (!PState.states[PlayerState.melee] && !PState.states[PlayerState.roll] && !PState.states[PlayerState.draw] && !PState.states[PlayerState.hook])
         {
             melee1.Melee1();
             melee2.Melee2();
         }
 
-        if (!PState.states[PlayerState.melee] && !PState.states[PlayerState.draw] && !PState.states[PlayerState.down])
+        if (!PState.states[PlayerState.down])
         {
             hook.Hook();
         }
