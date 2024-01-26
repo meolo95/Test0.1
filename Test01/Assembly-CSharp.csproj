@@ -53,7 +53,7 @@
     <UnityVersion>2022.3.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\test0.1\Enemy\EAttack\EnemyDropMob.cs" />
     <Compile Include="Assets\Scripts\SwordBat\SBMove.cs" />
     <Compile Include="Assets\Scripts\Obstacle\TrapArrow.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Tree\Tree.cs" />
     <Compile Include="Assets\Scripts\GoblinRider\GoblinRider.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\PGroundCheck.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EHit\EnemyHit.cs" />
@@ -119,6 +120,7 @@
     <Compile Include="Assets\Scripts\Obstacle\MovingStoneTargeting2.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\SideCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Tree\EnemyMove\EnemyTRoaming.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BladeObsMove.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeMove.cs" />
     <Compile Include="Assets\Scripts\GameSystem\EnemySpawnByPlayer.cs" />

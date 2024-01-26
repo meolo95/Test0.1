@@ -584,6 +584,8 @@
 "Assets/Scripts/test0.1/Projectile/Straight.cs"
 "Assets/Scripts/test0.1/Projectile/StraightPro.cs"
 "Assets/Scripts/test0.1/Public/PublicVoid.cs"
+"Assets/Scripts/test0.1/Tree/EnemyMove/EnemyTRoaming.cs"
+"Assets/Scripts/test0.1/Tree/Tree.cs"
 "Assets/Scripts/UI/LevelManager.cs"
 "Assets/Scripts/UI/MainMenu.cs"
 "Assets/Scripts/UI/MenuCamera.cs"
