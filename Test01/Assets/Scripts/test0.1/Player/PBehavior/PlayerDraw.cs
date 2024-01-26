@@ -7,10 +7,14 @@ public class PlayerDraw : PlayerBehaviour, IDraw
 {
     [SerializeField] GameObject arrow;
     GameObject aimingZone;
-    float angle;
+    float angle = -0.5f;
 
     public void Draw()
     {
+        if (Input.GetKeyDown(KeySetting.keys[KeyAction.Shoot]))
+        {
+            SoundManager.Instance.Play("Draw");
+        }
         if (Input.GetKey(KeySetting.keys[KeyAction.Shoot]))
         {
             anim.SetBool("IsReady", true);
@@ -19,6 +23,8 @@ public class PlayerDraw : PlayerBehaviour, IDraw
         }
         if (Input.GetKeyUp(KeySetting.keys[KeyAction.Shoot]))
         {
+            SoundManager.Instance.Stop("Draw");
+            SoundManager.Instance.Play("ArrowShot");
             anim.SetBool("IsReady", false);
             if (angle > 1f)
             {
@@ -35,7 +41,7 @@ public class PlayerDraw : PlayerBehaviour, IDraw
     void ArrowFire()
     {
         Vector3 pos = transform.position;
-        pos.x += PlayerLocation.Instance.dir * 0.2f;
+        pos.x += PlayerManage.Instance.dir * 0.2f;
         GameObject Arrow = Instantiate(arrow, pos, Quaternion.identity);
         Arrow.GetComponent<AProjectile>().angle = angle;
     }

@@ -10,7 +10,6 @@ public class PlayerBehaviour : MonoBehaviour
     protected Animator anim;
 
     protected PlayerLife life;
-    protected PlayerManage player = new PlayerManage(20, 30, 5, 5);
 
     protected BoxCollider2D Col;
     protected Vector2 Colsize;

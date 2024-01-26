@@ -23,40 +23,20 @@ public class AProjectile : MonoBehaviour
         attackZone = GetComponent<AttackZone>();
         pooler = GetComponent<Pooler>();
         rigid = GetComponent<Rigidbody2D>();
+        isFire = false;
         x = Mathf.Sqrt(1 - Mathf.Pow(angle, 2));
         direction = new Vector2(x, angle);
-        PlayerLocation.Instance.DefaultAngle();
-        instpos = transform.position;
+        direction.x = direction.x * PlayerManage.Instance.dir;
+        rigid.AddForce(direction * speed, ForceMode2D.Impulse);
+
+        //instpos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
         transform.right = rigid.velocity;
-        if (isFire)
-        {
-            direction.x = direction.x * PlayerLocation.Instance.dir;
-
-            rigid.AddForce(direction * speed, ForceMode2D.Impulse);
-            PlayerLocation.Instance.DefaultAngle();
-            isFire = false;
-        }
-
     }
-
-    public void SetDirection()
-    {
-        if (attackZone != null)
-        {
-            attackZone.isUsed = false;
-        }
-        x = Mathf.Sqrt(1 - Mathf.Pow(PlayerLocation.Instance.BowAngle(), 2));
-        direction = new Vector2(x, PlayerLocation.Instance.BowAngle());
-        PlayerLocation.Instance.DefaultAngle();
-        instpos = transform.position;
-        isFire = true;
-    }
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -74,20 +54,15 @@ public class AProjectile : MonoBehaviour
             Vector3 hitpos = transform.position;
             hitpos += transform.right * 0.5f;
 
-            if (otherObject.GetComponentInParent<EnemyBehavior>() != null && otherObject.GetComponentInParent<EnemyBehavior>().isDevine == false)
+            if (otherObject.GetComponentInParent<EnemyBehavior>().isDevine == false)
             {
                 GameObject newArrows = Instantiate(usedArrow, hitpos, transform.rotation);
                 newArrows.transform.SetParent(sharedParent.transform, true);
             }
-            else if (otherObject.GetComponentInParent<EnemyBehavior>() != null && otherObject.GetComponentInParent<EnemyBehavior>().isDevine == true)
+            else if (otherObject.GetComponentInParent<EnemyBehavior>().isDevine == true)
             {
                 GameObject newArrows = Instantiate(blockedArrow, hitpos, transform.rotation);
                 //newArrows.transform.SetParent(sharedParent.transform, true);
-            }
-            else
-            {
-                GameObject newArrows = Instantiate(usedArrow, hitpos, transform.rotation);
-                newArrows.transform.SetParent(sharedParent.transform, true);
             }
 
             //GameObject newArrows = PoolManager.Instance.GetGo("UsedArrow");

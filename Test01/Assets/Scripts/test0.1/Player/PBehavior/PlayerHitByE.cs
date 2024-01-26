@@ -38,6 +38,7 @@ public class PlayerHitByE : PlayerBehaviour, IHit
         SetColor(0.6f);
         PState.states[PlayerState.devine] = true;
         rigid.velocity = Vector3.zero;
+        PlayerManage.Instance.hp -= 1;
         if (hitObject.transform.position.x < transform.position.x)
         {
             rigid.AddForce(new Vector2(1, 1) * stun, ForceMode2D.Impulse);

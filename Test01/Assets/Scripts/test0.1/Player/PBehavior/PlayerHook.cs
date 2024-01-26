@@ -43,12 +43,12 @@ public class PlayerHook : PlayerBehaviour, IHook
 
         if (Input.GetKeyDown(KeySetting.keys[KeyAction.Hook]))
         {
+            SoundManager.Instance.Play("Hook");
             PState.states[PlayerState.hook] = true;
             hook.transform.position = transform.position;
             plocation = transform.position;
             posRight = transform.position + new Vector3(5f, 3f, 0f);
             posLeft = transform.position + new Vector3(-5f, 3f, 0f);
-            PlayerLocation.Instance.hooking = true;
             hook.SetActive(true);
         }
 
@@ -56,13 +56,13 @@ public class PlayerHook : PlayerBehaviour, IHook
         {
             if (hookControl.isCol == false)
             {
-                if (PlayerLocation.Instance.dir == 1)
+                if (PlayerManage.Instance.dir == 1)
                 {
 
                     Vector3 dir = (posRight - plocation).normalized;
                     hookControl.rigid.velocity = dir * speed;
                 }
-                if (PlayerLocation.Instance.dir == -1)
+                if (PlayerManage.Instance.dir == -1)
                 {
 
                     Vector3 dir = (posLeft - plocation).normalized;
@@ -71,7 +71,7 @@ public class PlayerHook : PlayerBehaviour, IHook
 
                 if (Vector2.Distance(plocation, hook.transform.position) > 10)
                 {
-                    hook.transform.position = PlayerLocation.Instance.PlayerPosition();
+                    hook.transform.position = PlayerManage.Instance.PlayerPosition();
                     hook.SetActive(false);
                     isLineMax = true;
                     hookControl.rigid.velocity = Vector3.zero;
@@ -88,7 +88,7 @@ public class PlayerHook : PlayerBehaviour, IHook
         {
             hookControl.joint.enabled = true;
             hookControl.joint.enabled = false;
-            hook.transform.position = PlayerLocation.Instance.PlayerPosition();
+            hook.transform.position = PlayerManage.Instance.PlayerPosition();
             hookControl.isCol = false;
             isLineMax = false;
             PlayerLocation.Instance.hooking = false;

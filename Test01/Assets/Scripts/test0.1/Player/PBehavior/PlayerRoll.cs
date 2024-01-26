@@ -28,10 +28,11 @@ public class PlayerRoll : PlayerBehaviour, IRoll
     IEnumerator ERoll()
     {
         anim.SetBool("IsRolling", true);
+        SoundManager.Instance.Play("Roll");
         PState.states[PlayerState.roll] = true;
         PState.states[PlayerState.devine] = true;
         rigid.velocity = Vector2.zero;
-        rigid.AddForce(new Vector2(PlayerLocation.Instance.dir * rollSpeed, 0f), ForceMode2D.Impulse);
+        rigid.AddForce(new Vector2(PlayerManage.Instance.dir * rollSpeed, 0f), ForceMode2D.Impulse);
         yield return new WaitForSeconds(0.5f);
         anim.SetBool("IsRolling", false);
         PState.states[PlayerState.roll] = false;

@@ -68,33 +68,74 @@ public enum PlayerLife
 }
 
 public static class PState { public static Dictionary<PlayerState, bool> states = new Dictionary<PlayerState, bool>(); }
-public class PlayerManage
+public class PlayerManage : MonoBehaviour
 {
-    protected int health;
-    protected int arrow;
-    protected float speed;
-    protected float jump;
+    public static PlayerManage Instance = null;
 
-    protected int dir;
-
-    protected Rigidbody2D rigid;
-
-    protected PlayerLife life;
-
-
-    public PlayerManage(int health, int arrow, float speed, float jump)
+    private void Awake()
     {
-        this.health = health;
-        this.arrow = arrow;
-        this.speed = speed;
-        this.jump = jump;
-
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        SetInfo(15, 30);
         
     }
 
-    public float GetSpeed()
+    [SerializeField] GameObject player;
+
+    private int _hp;
+    private int _arrow;
+    private int _dir = 1;
+
+    public int hp
     {
-        return speed;
+        get
+        {
+            return _hp;
+        }
+        set
+        {
+            _hp = value;
+        }
+    }
+    public int arrow
+    {
+        get
+        {
+            return _arrow;
+        }
+        set
+        {
+            _arrow = value;
+        }
+    }
+    public int dir
+    {
+        get
+        {
+            return _dir;
+        }
+        set
+        {
+            _dir = value;
+        }
+    }
+
+    void SetInfo(int h, int a)
+    {
+        hp = h;
+        arrow = a;
+    }
+
+    public Vector3 PlayerPosition()
+    {
+        return player.transform.position;
     }
 
 }

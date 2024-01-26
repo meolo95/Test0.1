@@ -174,15 +174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   demage: 5
-  reduceDemage: 0
-  weaponHp: 0
-  weaponBroken: []
-  broke: 0
-  brokenWeaponSword: []
-  brokenWeaponSpear: []
   isUsed: 0
-  boxSize: {x: 0, y: 0}
-  offset: {x: 0, y: 0}
 --- !u!114 &-8514443894070175587
 MonoBehaviour:
   m_ObjectHideFlags: 0

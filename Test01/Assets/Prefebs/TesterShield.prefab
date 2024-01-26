@@ -747,7 +747,6 @@ GameObject:
   - component: {fileID: 6666912392555594870}
   - component: {fileID: 7913707976800483329}
   - component: {fileID: 2027167994665077706}
-  - component: {fileID: 734570082376816878}
   - component: {fileID: 366266180665914773}
   m_Layer: 7
   m_Name: TesterShield
@@ -901,11 +900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyname: 
   health: 99999
-  demage: 0
-  stun: 0
-  speed: 0
   state: 0
   life: 0
   hitState: 0
@@ -937,19 +932,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   delay: 3
---- !u!114 &734570082376816878
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4329846640365358387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad0d88a3dc7eb5b4880d0a344513eee0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 3
 --- !u!114 &366266180665914773
 MonoBehaviour:
   m_ObjectHideFlags: 0

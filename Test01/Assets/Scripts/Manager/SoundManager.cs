@@ -2,6 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public class Sound
+{
+    public string name;
+    public AudioClip clip;
+}
+
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance;
@@ -9,6 +16,9 @@ public class SoundManager : MonoBehaviour
     GameObject draw;
 
     [SerializeField] AudioClip[] clips;
+    [SerializeField] Sound[] sounds = null;
+
+    [SerializeField] AudioSource[] sources = null;
 
 
     private void Awake()
@@ -25,6 +35,75 @@ public class SoundManager : MonoBehaviour
     }
     // Start is called before the first frame update
     
+
+    public void Play(string sfxName)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == sfxName)
+            {
+                for (int j = 0; j < sources.Length; j++)
+                {
+                    if (!sources[j].isPlaying)
+                    {
+                        sources[j].clip = sounds[i].clip;
+                        sources[j].Play();
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
+    public void Stop(string sfxName)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == sfxName)
+            {
+                for (int j = 0; j < sources.Length; j++)
+                {
+                    if (sources[j].isPlaying)
+                    {
+                        if (sources[j].clip.name == sounds[i].clip.name)
+                        {
+                            sources[j].Stop();
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void OnlyPlay(string sfxName)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == sfxName)
+            {
+                for (int j = 0; j < sources.Length; j++)
+                {
+                    if (sources[j].isPlaying)
+                    {
+                        if (sources[j].clip.name == sounds[i].clip.name)
+                        {
+                            return;
+                        }
+                    }
+                }
+                for (int j = 0; j < sources.Length; j++)
+                {
+                    if (!sources[j].isPlaying)
+                    {
+                        sources[j].clip = sounds[i].clip;
+                        sources[j].Play();
+                        return;
+                    }
+                }
+            }
+        }
+    }
+
     public void SFXPlay(string sfxName, AudioClip clip, float volume)
     {
         GameObject go = new GameObject(sfxName + "Sound");
