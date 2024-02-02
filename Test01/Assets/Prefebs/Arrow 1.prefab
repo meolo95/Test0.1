@@ -175,6 +175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   demage: 5
   isUsed: 0
+  usedArrow: {fileID: 4801423159191320556, guid: efbb9a90dfdcb7848b703a0e3f1b8164, type: 3}
+  blockedArrow: {fileID: 4801423159191320556, guid: c2dcab53115aec54883619f2ed7f07c7, type: 3}
 --- !u!114 &-8514443894070175587
 MonoBehaviour:
   m_ObjectHideFlags: 0

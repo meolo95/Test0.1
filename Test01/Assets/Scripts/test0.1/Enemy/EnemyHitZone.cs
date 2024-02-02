@@ -29,10 +29,33 @@ public class EnemyHitZone : MonoBehaviour
                             behavior.hitState = EnemyHitState.hitting;
                             behavior.check = false;
                             behavior.EnemyManage(-attackZone.demage);
+                            if (attackZone.usedArrow != null)
+                            {
+                                GameObject sharedParent = new GameObject("Father");
+                                sharedParent.transform.position = collision.gameObject.transform.position;
+                                sharedParent.transform.rotation = collision.gameObject.transform.rotation;
+                                sharedParent.transform.SetParent(gameObject.transform);
+                                Vector3 hitpos = collision.transform.position;
+                                hitpos += collision.transform.right * 0.2f;
+                                GameObject newArrows = Instantiate(attackZone.usedArrow, hitpos, collision.transform.rotation);
+                                newArrows.transform.SetParent(sharedParent.transform, true);
+                                Destroy(collision.gameObject);
+                            }
 
 
                             delayStop();
                             delayStart();
+                        }
+                        else
+                        {
+                            if (attackZone.usedArrow != null)
+                            {
+                                Vector3 hitpos = collision.transform.position;
+                                hitpos += collision.transform.right * 0.2f;
+                                GameObject newArrows = Instantiate(attackZone.blockedArrow, hitpos, collision.transform.rotation);
+                                Destroy(collision.gameObject);
+
+                            }
                         }
                     }
                 }

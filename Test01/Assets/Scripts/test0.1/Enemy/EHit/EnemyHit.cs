@@ -2,15 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyHit : MonoBehaviour, IHit
+public class EnemyHit : EnemyManage, IHit
 {
-    Rigidbody2D rigid;
     [SerializeField] float stun = 6f;
 
-    private void Awake()
-    {
-        rigid = GetComponent<Rigidbody2D>();
-    }
 
     public void Hit()
     {

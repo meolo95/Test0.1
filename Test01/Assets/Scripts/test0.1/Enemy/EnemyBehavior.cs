@@ -3,11 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public interface IStateControl
-{
-    void Change(EnemyState newState);
-}
-public class EnemyBehavior : MonoBehaviour, IStateControl
+public class EnemyBehavior : MonoBehaviour
 {
     protected EnemyManage enemy;
     private IAttack attackBehavior;
@@ -139,14 +135,6 @@ public class EnemyBehavior : MonoBehaviour, IStateControl
             life = EnemyLife.dying;
         }
     }
-
-    public void Change(EnemyState newState)
-    {
-        state = newState;
-    }
-
-
-    
 
 }
 

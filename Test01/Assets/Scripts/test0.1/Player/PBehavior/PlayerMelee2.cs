@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class PlayerMelee2 : PlayerBehaviour, IMelee2
 {
-    GameObject attackZone;
+    [SerializeField] GameObject attackZone;
     [SerializeField] float delay;
     [SerializeField] float time;
     protected override void Awake()
     {
         base.Awake();
-        attackZone = transform.GetChild(3).gameObject;
+        //attackZone = transform.GetChild(1).gameObject;
     }
     public void Melee2()
     {

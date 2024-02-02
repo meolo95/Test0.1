@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyTRoaming : EnemyManage, IMove, Node
+public class EnemyTRoaming : EnemyManage, IMove
 {
     protected int rand;
     [SerializeField] protected float speed;
@@ -12,13 +12,8 @@ public class EnemyTRoaming : EnemyManage, IMove, Node
         base.Awake();
         box = transform.GetChild(2).GetComponent<BoxCollider2D>();
         RandomC();
-
     }
 
-    public bool Execute()
-    {
-        return true;
-    }
 
     public void Move()
     {
@@ -39,7 +34,7 @@ public class EnemyTRoaming : EnemyManage, IMove, Node
         {
             AnimSetTrue("IsWalk");
             transform.localScale = new Vector2(rand, 1f);
-        }
+        } 
         if (rand == 0)
         {
             AnimSetTrue("IsIdle");
