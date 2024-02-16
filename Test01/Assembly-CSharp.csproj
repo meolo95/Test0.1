@@ -53,7 +53,7 @@
     <UnityVersion>2022.3.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -63,7 +63,6 @@
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinMove.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\PlayerCapsule.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\PlayerGB.cs" />
-    <Compile Include="Assets\Scripts\GameSystem\SettingManager.cs" />
     <Compile Include="Assets\Scripts\Slime\SlimeTargeting.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\AProjectile.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EAttack\EnemyRush.cs" />
@@ -95,14 +94,14 @@
     <Compile Include="Assets\Scripts\test0.1\Enemy\EMove\EnemySenseRoaming.cs" />
     <Compile Include="Assets\Scripts\Obstacle\WeakGround.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EEtc\EnemyHideUp.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\OptionManager.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EEtc\EnemyDrop.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeTargeting.cs" />
     <Compile Include="Assets\Scripts\SwordBat\SBAttack.cs" />
     <Compile Include="Assets\Scripts\GoblinRider\GoblinRiderMove.cs" />
     <Compile Include="Assets\Scripts\Player\Spear\SpearProjectile.cs" />
     <Compile Include="Assets\Scripts\Player\Bow\DropArrow.cs" />
-    <Compile Include="Assets\Scripts\GameSystem\PUIControl.cs" />
-    <Compile Include="Assets\Scripts\GameSystem\KeyManager.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Player\PBehavior\PlayerDie.cs" />
     <Compile Include="Assets\Scripts\ArmorGhost\ArmorGhostTargeting.cs" />
     <Compile Include="Assets\Scripts\Manager\SoundManager.cs" />
     <Compile Include="Assets\Scripts\GoblinRider\GoblinRiderTargeting.cs" />
@@ -125,6 +124,7 @@
     <Compile Include="Assets\Scripts\Obstacle\MovingStoneTargeting2.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\SideCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\Heart\HeartManager.cs" />
     <Compile Include="Assets\Scripts\test0.1\Tree\EnemyMove\EnemyTRoaming.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BladeObsMove.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeMove.cs" />
@@ -145,7 +145,6 @@
     <Compile Include="Assets\Scripts\Player\Bow\UsedArrow.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinThrow.cs" />
     <Compile Include="Assets\Scripts\SwordGoblin\SwordGoblinTargeting.cs" />
-    <Compile Include="Assets\Scripts\GameSystem\HeartManager.cs" />
     <Compile Include="Assets\Scripts\test0.1\Projectile\StraightPro.cs" />
     <Compile Include="Assets\Scripts\GameSystem\Clear.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\SCup.cs" />
@@ -154,11 +153,13 @@
     <Compile Include="Assets\Scripts\PlayerHit.cs" />
     <Compile Include="Assets\Scripts\BossCentipede\BCTargeting.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\EnemyManager.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\Heart\EHeartManager.cs" />
     <Compile Include="Assets\Scripts\BowGoblin\BowGoblinMove.cs" />
     <Compile Include="Assets\Scripts\Player\HookControl.cs" />
     <Compile Include="Assets\Scripts\test0.1\Tree\EnemyEtc\EnemyIdle.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\PlayerHitZone.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\PlayerBehaviour.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\KeyManager.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinTargeting.cs" />
     <Compile Include="Assets\Scripts\test0.1\Tree\EnemyAttack\EnemyTThrow.cs" />
     <Compile Include="Assets\Scripts\WalkingSC\WSC.cs" />
@@ -183,6 +184,7 @@
     <Compile Include="Assets\Scripts\SwordBat\SBSense.cs" />
     <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\Walking.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\UIManager.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\Enemy.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EDie\EnemyDie.cs" />
     <Compile Include="Assets\Scripts\Manager\StageManager\StageManager.cs" />
@@ -206,7 +208,6 @@
     <Compile Include="Assets\Scripts\Spider\SpiderWalk.cs" />
     <Compile Include="Assets\Scripts\Slime\SlimeJump.cs" />
     <Compile Include="Assets\Scripts\test0.1\Public\Pooler.cs" />
-    <Compile Include="Assets\Scripts\GameSystem\OptionManager.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\ThrownSpear.cs" />
     <Compile Include="Assets\Scripts\Boar\BoarRigid.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\HitByP.cs" />
@@ -221,6 +222,7 @@
     <Compile Include="Assets\Scripts\test0.1\Player\PBehavior\PlayerWalk.cs" />
     <Compile Include="Assets\Scripts\SkulCentipede\SCSense.cs" />
     <Compile Include="Assets\Scripts\test0.1\Player\PBehavior\PlayerJump.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\SettingManager.cs" />
     <Compile Include="Assets\Scripts\Obstacle\ObstacleMove.cs" />
     <Compile Include="Assets\Scripts\GameSystem\PointerSignal.cs" />
     <Compile Include="Assets\Scripts\Player\Spear\SpearThrow.cs" />
@@ -229,6 +231,7 @@
     <Compile Include="Assets\FullScreenFX\Scripts\MaterialPropertyController.cs" />
     <Compile Include="Assets\Scripts\SwordGoblin\BlockedArrow.cs" />
     <Compile Include="Assets\Scripts\EmemyManager\NotFall.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\PUIControl.cs" />
     <Compile Include="Assets\Scripts\MeleeGoblin\MeleeGoblin.cs" />
     <Compile Include="Assets\Scripts\test0.1\Projectile\ProjectileTimeOut.cs" />
     <Compile Include="Assets\Scripts\UI\LevelManager.cs" />
@@ -276,6 +279,8 @@
     <Compile Include="Assets\Scripts\test0.1\Projectile\Straight.cs" />
     <Compile Include="Assets\Scripts\BossCentipede\BCMove.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EAttack\EnemyFlyingRush.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\Destroyer.cs" />
+    <Compile Include="Assets\Scripts\test0.1\System\Heart\FHeartManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

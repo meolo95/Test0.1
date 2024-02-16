@@ -23,6 +23,8 @@ public class ObjectPoolManager : MonoBehaviour
     Dictionary<string, Dictionary<int, GameObject>> objList = new Dictionary<string, Dictionary<int, GameObject>>();
     Dictionary<string, Dictionary<int, bool>> boolList = new Dictionary<string, Dictionary<int, bool>>();
 
+    Dictionary<string, GameObject> objectList = new Dictionary<string, GameObject>();
+
     private void Awake()
     {
         if (Instance == null)

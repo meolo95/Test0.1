@@ -11,20 +11,24 @@ public class PlayerHitZone : MonoBehaviour
     }
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (!PState.states[PlayerState.devine])
+        if (PlayerCommand.plife == PlayerLife.live)
         {
-            if (other.gameObject.tag == "HitZone")
+            if (!PState.states[PlayerState.devine])
             {
-                hit.hitObject = other.gameObject;
-                PState.states[PlayerState.hit] = true;
-            }
+                if (other.gameObject.tag == "HitZone")
+                {
+                    hit.hitObject = other.gameObject;
+                    PState.states[PlayerState.hit] = true;
+                }
 
-            if (other.gameObject.tag == "Projectile")
-            {
-                hit.hitObject = other.gameObject;
-                PState.states[PlayerState.hit] = true;
+                if (other.gameObject.tag == "Projectile")
+                {
+                    hit.hitObject = other.gameObject;
+                    PState.states[PlayerState.hit] = true;
+                }
             }
         }
+        
     }
 
 }

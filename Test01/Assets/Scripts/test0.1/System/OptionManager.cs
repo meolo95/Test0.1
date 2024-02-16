@@ -28,7 +28,7 @@ public class OptionManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape)  && isMain == false)
         {
-            if (isOver == false && PlayerLocation.Instance.isPlay == true)
+            if (isOver == false && PlayerManage.Instance.isPlay == true)
             {
                 TogglePause();
             }
@@ -84,11 +84,13 @@ public class OptionManager : MonoBehaviour
     public void OnClickRestart()
     {
         isOver = false;
-        PlayerLocation.Instance.isPlay = true;
+        //PlayerManage.Instance.isPlay = true;
         isMain = false;
         overPanel.SetActive(false);
-        PlayerLocation.Instance.p.SetActive(true);
-        PlayerLocation.Instance.SetPlayerNormal();
+        //PlayerLocation.Instance.p.SetActive(true);
+        //PlayerLocation.Instance.SetPlayerNormal();
+        PlayerManage.Instance.PlayerReset();
+
         SceneManager.LoadScene("Stage1");
     }
     public void BackToOption()
@@ -107,17 +109,19 @@ public class OptionManager : MonoBehaviour
         Time.timeScale = 1;
         isOver = false;
         isMain = true;
-        PlayerLocation.Instance.isEnding = false;
-        PlayerLocation.Instance.timer = 0f;
+        //PlayerLocation.Instance.isEnding = false;
+        //PlayerLocation.Instance.timer = 0f;
         optionPanel.SetActive(false);
         settingPanel.SetActive(false);
         overPanel.SetActive(false);
+        PlayerManage.Instance.UIDActive();
         string nextScene = "MainMenu";
-        PlayerLocation.Instance.SetPlayerNormal();
-        PlayerLocation.Instance.SetNormal();
+        //PlayerLocation.Instance.SetPlayerNormal();
+        //PlayerLocation.Instance.SetNormal();
         //PlayerLocation.Instance.p.SetActive(false);
-        PlayerLocation.Instance.pManager.SetActive(false);
-        PlayerLocation.Instance.SetMain();
+        //PlayerLocation.Instance.pManager.SetActive(false);
+        //PlayerLocation.Instance.SetMain();
+        PlayerManage.Instance.PlayerReset();
         SceneManager.LoadScene(nextScene);
     }
 
@@ -125,9 +129,9 @@ public class OptionManager : MonoBehaviour
     {
         isOver = false;
         isMain = true;
-        PlayerLocation.Instance.SetPlayerNormal();
-        PlayerLocation.Instance.p.SetActive(false);
-        PlayerLocation.Instance.pManager.SetActive(false);
+        //PlayerLocation.Instance.SetPlayerNormal();
+        //PlayerLocation.Instance.p.SetActive(false);
+        //PlayerLocation.Instance.pManager.SetActive(false);
     }
 
     public void QuitOverGame()
@@ -137,11 +141,14 @@ public class OptionManager : MonoBehaviour
         optionPanel.SetActive(false);
         settingPanel.SetActive(false);
         overPanel.SetActive(false);
+        PlayerManage.Instance.PlayerReset();
+        PlayerManage.Instance.UIDActive();
         string nextScene = "MainMenu";
-        PlayerLocation.Instance.p.SetActive(true);
-        PlayerLocation.Instance.SetPlayerNormal();
-        PlayerLocation.Instance.p.SetActive(false);
-        PlayerLocation.Instance.pManager.SetActive(false);
+        //PlayerLocation.Instance.p.SetActive(true);
+        //PlayerLocation.Instance.SetPlayerNormal();
+        //PlayerLocation.Instance.p.SetActive(false);
+        //PlayerLocation.Instance.pManager.SetActive(false);
         SceneManager.LoadScene(nextScene);
+
     }
 }

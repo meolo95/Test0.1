@@ -60,7 +60,7 @@ public class IceGround : MonoBehaviour
         if (isIce != true)
         {
             timer = 0f;
-            PlayerLocation.Instance.SetHeat();
+            PlayerManage.Instance.frozenHp = 0;
         }
 
         if (check)
@@ -124,7 +124,7 @@ public class IceGround : MonoBehaviour
         check = false;
         if (demaging)
         {
-            PlayerLocation.Instance.FreezePlayer();
+            PlayerManage.Instance.frozenHp++;
         }
         yield return new WaitForSeconds(2f);
         timer = 0f;

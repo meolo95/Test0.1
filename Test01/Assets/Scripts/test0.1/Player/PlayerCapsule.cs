@@ -4,8 +4,17 @@ using UnityEngine;
 
 public class PlayerCapsule : MonoBehaviour
 {
+    public static PlayerCapsule Instance = null;
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

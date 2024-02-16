@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class CameraContol : MonoBehaviour
 {
+    public static CameraContol Instance = null;
+
     public Transform target;
     [SerializeField]  [Range(0.0f, 10f)] float cameraSpeed;
     float y = 0f;
@@ -15,12 +17,20 @@ public class CameraContol : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (Instance == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
         //target = PlayerManager.Instance.player.transform;
     }
     void Start()
     {
-        target = PlayerManager.Instance.player.transform;
     }
 
     // Update is called once per frame
@@ -35,7 +45,7 @@ public class CameraContol : MonoBehaviour
 
     void LateUpdate()
     {
-        if (PlayerLocation.Instance.isPlay == true)
+        if (PlayerManage.Instance.isPlay == true)
         {
 
             var pos = new Vector3(target.position.x, target.position.y, -10f);

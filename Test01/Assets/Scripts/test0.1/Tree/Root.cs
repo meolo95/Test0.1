@@ -56,7 +56,6 @@ public class Root : MonoBehaviour
                         new Sequence(
                             new EtcBehavior(etc)
                             )))
-                
                 ));
     }
 

@@ -47,6 +47,10 @@ public class PlayerHitByE : PlayerBehaviour, IHit
         {
             rigid.AddForce(new Vector2(-1, 1) * stun, ForceMode2D.Impulse);
         }
+        if (PlayerManage.Instance.hp <= 0)
+        {
+            PlayerCommand.plife = PlayerLife.die;
+        }
         yield return new WaitForSeconds(time);
         PState.states[PlayerState.hit] = false;
         yield return new WaitForSeconds(delay);

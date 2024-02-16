@@ -16,6 +16,9 @@ public class PlayerCommand : MonoBehaviour
     IUp up;
     IHook hook;
     IHit hit;
+    IPDie die;
+
+    public static PlayerLife plife;
 
     private void Awake()
     {
@@ -23,7 +26,7 @@ public class PlayerCommand : MonoBehaviour
         {
             PState.states.Add((PlayerState)i, false);
         }
-
+        plife = PlayerLife.live;
         walk = GetComponent<IWalk>();
         roll = GetComponent<IRoll>();
         down = GetComponent<IDown>();
@@ -35,66 +38,72 @@ public class PlayerCommand : MonoBehaviour
         up = GetComponent<IUp>();
         hook = GetComponent<IHook>();
         hit = GetComponent<IHit>();
+        die = GetComponent<IPDie>();
     }
     void Start()
     {
-        PlayerLocation.Instance.DefaultAngle();
-        PlayerLocation.Instance.dir = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (PState.states.Any(state => state.Value))
+        if (plife == PlayerLife.live)
         {
-            idle.Idle();
-        }
+            if (PState.states.Any(state => state.Value))
+            {
+                idle.Idle();
+            }
 
-        if (!PState.states[PlayerState.roll] && !PState.states[PlayerState.down] && !PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.hit])
-        {
-            walk.Walk();
-        }
+            if (!PState.states[PlayerState.roll] && !PState.states[PlayerState.down] && !PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.hit])
+            {
+                walk.Walk();
+            }
 
-        if (!PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.hit])
-        {
-            roll.Roll();
-        }
+            if (!PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.hit])
+            {
+                roll.Roll();
+            }
 
 
-        if (!PState.states[PlayerState.roll] && !PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.draw] && !PState.states[PlayerState.hit])
-        {
-            down.Down();
+            if (!PState.states[PlayerState.roll] && !PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.draw] && !PState.states[PlayerState.hit])
+            {
+                down.Down();
+            }
+            else
+            {
+                up.Up();
+            }
+
+
+            if (!PState.states[PlayerState.down] && !PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.hit])
+            {
+                jump.Jump();
+            }
+
+            if (!PState.states[PlayerState.melee])
+            {
+                draw.Draw();
+            }
+
+            if (!PState.states[PlayerState.melee] && !PState.states[PlayerState.roll] && !PState.states[PlayerState.draw] && !PState.states[PlayerState.hook])
+            {
+                melee1.Melee1();
+                melee2.Melee2();
+            }
+
+            if (!PState.states[PlayerState.down])
+            {
+                hook.Hook();
+            }
+
+            if (PState.states[PlayerState.hit] && !PState.states[PlayerState.roll])
+            {
+                hit.Hit();
+            }
         }
         else
         {
-            up.Up();
-        }
-
-
-        if (!PState.states[PlayerState.down] && !PState.states[PlayerState.hook] && !PState.states[PlayerState.melee] && !PState.states[PlayerState.hit])
-        {
-            jump.Jump();
-        }
-
-        if (!PState.states[PlayerState.melee])
-        {
-            draw.Draw();
-        }
-
-        if (!PState.states[PlayerState.melee] && !PState.states[PlayerState.roll] && !PState.states[PlayerState.draw] && !PState.states[PlayerState.hook])
-        {
-            melee1.Melee1();
-            melee2.Melee2();
-        }
-
-        if (!PState.states[PlayerState.down])
-        {
-            hook.Hook();
-        }
-
-        if (PState.states[PlayerState.hit] && !PState.states[PlayerState.roll])
-        {
-            hit.Hit();
+            die.Die();
         }
     }
 }

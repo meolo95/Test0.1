@@ -86,14 +86,18 @@ public class PlayerHook : PlayerBehaviour, IHook
 
         if (Input.GetKeyUp(KeySetting.keys[KeyAction.Hook]))
         {
-            hookControl.joint.enabled = true;
-            hookControl.joint.enabled = false;
-            hook.transform.position = PlayerManage.Instance.PlayerPosition();
-            hookControl.isCol = false;
-            isLineMax = false;
-            PlayerLocation.Instance.hooking = false;
-            hook.SetActive(false);
-            PState.states[PlayerState.hook] = false;
+            HookOff();
         }
+    }
+
+    public void HookOff()
+    {
+        hookControl.joint.enabled = true;
+        hookControl.joint.enabled = false;
+        hook.transform.position = PlayerManage.Instance.PlayerPosition();
+        hookControl.isCol = false;
+        isLineMax = false;
+        hook.SetActive(false);
+        PState.states[PlayerState.hook] = false;
     }
 }

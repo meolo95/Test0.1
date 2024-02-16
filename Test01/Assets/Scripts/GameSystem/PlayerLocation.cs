@@ -130,33 +130,19 @@ public class PlayerLocation : MonoBehaviour
     }
 
 
-    public int PlayerHp()
-    {
-        return hit.health;
-    }
 
-    public int FrozenHp()
-    {
-        return hit.frozenHp;
-    }
-
-
-    public void HitPlayer()
-    {
-        hit.DemagePlayer(1);
-    }
 
     public void FreezePlayer()
     {
         hit.frozenHp += 1;
-        blueHeart.FrozenHearts();
+        //blueHeart.FrozenHearts();
         hit.FreezePlayer();
     }
 
     public void SetHeat()
     {
         hit.frozenHp = 0;
-        blueHeart.FrozenHearts();
+        //blueHeart.FrozenHearts();
     }
 
     public void PlayerHitAction()

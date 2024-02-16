@@ -4596,7 +4596,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5fd6adffa21f87448b97ada496f954a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isblue: 0
   heart: {fileID: 7942835004466089966, guid: c7e333405fc535a41b1c528346e0323a, type: 3}
   hearts: []
 --- !u!114 &454284705
@@ -8381,7 +8380,7 @@ RectTransform:
   - {fileID: 1142388832}
   - {fileID: 454284703}
   - {fileID: 621742700}
-  m_Father: {fileID: 1142534823}
+  m_Father: {fileID: 1807453297}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8597,7 +8596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 621742700}
   - component: {fileID: 621742702}
-  - component: {fileID: 621742701}
+  - component: {fileID: 621742703}
   m_Layer: 5
   m_Name: 'BlueContainer '
   m_TagString: Untagged
@@ -8624,21 +8623,6 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &621742701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621742699}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5fd6adffa21f87448b97ada496f954a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isblue: 1
-  heart: {fileID: 7942835004466089966, guid: 389d2b151258dd3439595d708f40a44a, type: 3}
-  hearts: []
 --- !u!114 &621742702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8665,6 +8649,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &621742703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621742699}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac92dd85898bedb4f898b227b8c2a19c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: {fileID: 7942835004466089966, guid: 389d2b151258dd3439595d708f40a44a, type: 3}
+  hearts: []
 --- !u!1 &624228117
 GameObject:
   m_ObjectHideFlags: 0
@@ -17246,7 +17244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142388832}
   - component: {fileID: 1142388834}
-  - component: {fileID: 1142388833}
+  - component: {fileID: 1142388835}
   m_Layer: 5
   m_Name: EmptyContainer
   m_TagString: Untagged
@@ -17273,21 +17271,6 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1142388833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142388831}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5fd6adffa21f87448b97ada496f954a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isblue: 0
-  heart: {fileID: 7942835004466089966, guid: e96b9b9190ecfe941840a158c2bad7f7, type: 3}
-  hearts: []
 --- !u!114 &1142388834
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17314,6 +17297,20 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1142388835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142388831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1670e1bb720ccd64a839d12f820e87fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heart: {fileID: 7942835004466089966, guid: e96b9b9190ecfe941840a158c2bad7f7, type: 3}
+  hearts: []
 --- !u!1 &1142534819
 GameObject:
   m_ObjectHideFlags: 0
@@ -17323,8 +17320,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1142534823}
-  - component: {fileID: 1142534822}
-  - component: {fileID: 1142534821}
   - component: {fileID: 1142534820}
   m_Layer: 0
   m_Name: PlayerManager
@@ -17352,52 +17347,6 @@ MonoBehaviour:
   - {fileID: 45319631}
   - {fileID: 1565056084}
   - {fileID: 1853916173}
---- !u!114 &1142534821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142534819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feb8506f3bdcd9d4499a512fc7ceb2ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
---- !u!114 &1142534822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1142534819}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c04e56f1959e2b48af5a4c8de99f606, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  walking: {fileID: 0}
-  hit: {fileID: 0}
-  bowAttack: {fileID: 0}
-  playerAttack: {fileID: 0}
-  animationManager: {fileID: 0}
-  heartManager: {fileID: 454284704}
-  blueHeart: {fileID: 621742701}
-  p: {fileID: 0}
-  pManager: {fileID: 585276887}
-  kills: 0
-  hits: 0
-  timer: 0
-  min: 0
-  doingSomething: 0
-  hooking: 0
-  bowing: 0
-  normalH: 0
-  isPlay: 0
-  isEnding: 0
-  dir: 0
 --- !u!4 &1142534823
 Transform:
   m_ObjectHideFlags: 0
@@ -17411,7 +17360,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 585276888}
   - {fileID: 1218155321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19243,7 +19191,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlay: 0
-  player: {fileID: 3467444023562347725}
 --- !u!1 &1381243171
 GameObject:
   m_ObjectHideFlags: 0
@@ -21770,6 +21717,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 3467444023562347725}
+  heart: {fileID: 454284704}
+  fheart: {fileID: 621742703}
+  PlayerUI: {fileID: 585276887}
+  kills: 0
+  hits: 0
+  timer: 0
+  min: 0
+  isPlay: 0
 --- !u!4 &1807453297
 Transform:
   m_ObjectHideFlags: 0
@@ -21782,7 +21737,8 @@ Transform:
   m_LocalPosition: {x: -0.7480717, y: 1.034172, z: -0.16326845}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 585276888}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1820059665
@@ -23644,6 +23600,7 @@ GameObject:
   - component: {fileID: 1922457445}
   - component: {fileID: 1922457444}
   - component: {fileID: 1922457443}
+  - component: {fileID: 1922457446}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -23710,6 +23667,18 @@ Transform:
   - {fileID: 2090033035}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1922457446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1922457442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7909777405444784ea9dc7b8f5462c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1951970827
 GameObject:
   m_ObjectHideFlags: 0
@@ -26680,6 +26649,7 @@ GameObject:
   - component: {fileID: 6073889486041111414}
   - component: {fileID: 6073889486041111413}
   - component: {fileID: 6073889486041111412}
+  - component: {fileID: 6073889486041111425}
   - component: {fileID: 6073889486041111424}
   - component: {fileID: 6073889486041111423}
   m_Layer: 8
@@ -27622,6 +27592,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.45611286, y: 1.2183948}
   m_EdgeRadius: 0
+--- !u!114 &6073889486041111425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467444023562347725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d2953121591e8f44be8c2660f000a05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &6076081206831436674
 Transform:
   m_ObjectHideFlags: 0

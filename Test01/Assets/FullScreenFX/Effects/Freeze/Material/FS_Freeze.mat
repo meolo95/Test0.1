@@ -69,7 +69,7 @@ Material:
     - _Boolean: 1
     - _Mask_Contrast: 0.35
     - _Mask_Noise: 0.7
-    - _Mask_Size: 1.5
+    - _Mask_Size: 1
     - _PulseSpeed: 3
     - _Pulse_Speed: 0.1
     - _enabled: 0
