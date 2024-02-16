@@ -69,10 +69,10 @@ Material:
     - _Boolean: 1
     - _Mask_Contrast: 0.35
     - _Mask_Noise: 0.7
-    - _Mask_Size: 1
+    - _Mask_Size: 1.5
     - _PulseSpeed: 3
     - _Pulse_Speed: 0.1
-    - _enabled: 1
+    - _enabled: 0
     m_Colors:
     - _Color: {r: 0.99495894, g: 1.0971924, b: 1.360847, a: 1}
     - _Tiling: {r: 1, g: 1, b: 0, a: 0}

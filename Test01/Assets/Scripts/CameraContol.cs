@@ -2,16 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraContol : MonoBehaviour
 {
     public Transform target;
     [SerializeField]  [Range(0.0f, 10f)] float cameraSpeed;
     float y = 0f;
+
+    bool isStart;
     // Start is called before the first frame update
 
     private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         //target = PlayerManager.Instance.player.transform;
     }
     void Start()
@@ -22,6 +26,11 @@ public class CameraContol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    public static void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Debug.Log("Scene loaded: " + scene.name);
     }
 
     void LateUpdate()

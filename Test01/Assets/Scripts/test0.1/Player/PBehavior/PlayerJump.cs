@@ -33,8 +33,8 @@ public class PlayerJump : PlayerBehaviour, IJump
         Vector2 pos = transform.position;
         Vector2 colPos = pos + offset;
 
-        Vector2 start = colPos - new Vector2(size.x / 2, size.y / 2);
-        Vector2 fin = colPos - new Vector2(-size.x / 2, (size.y / 2) + 0.1f);
+        Vector2 start = colPos - new Vector2(size.x / 2, size.y / 2) + new Vector2(0.1f, 0f);
+        Vector2 fin = colPos - new Vector2(-size.x / 2, (size.y / 2) + 0.1f) - new Vector2(0.1f, 0f);
         PState.states[PlayerState.jump] = Physics2D.OverlapArea(start, fin, LayerMask.GetMask("Platform"));
         if (PState.states[PlayerState.jump])
         {

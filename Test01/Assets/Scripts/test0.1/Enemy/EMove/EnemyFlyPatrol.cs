@@ -24,11 +24,11 @@ public class EnemyFlyPatrol : EnemyManage, IMove
     {
         patdis = Vector3.Distance(transform.position, patrol);
         posdis = Vector3.Distance(transform.position, pos);
-        if (patdis < 0.1f)
+        if (patdis < 1f)
         {
             ispat = true;
         }
-        if (posdis < 0.1f)
+        if (posdis < 1f)
         {
             ispat = false;
         }

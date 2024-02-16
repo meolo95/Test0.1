@@ -11,38 +11,42 @@ public class PlayerDraw : PlayerBehaviour, IDraw
 
     public void Draw()
     {
-        if (Input.GetKeyDown(KeySetting.keys[KeyAction.Shoot]))
+        if (PlayerManage.Instance.arrow > 0)
         {
-            SoundManager.Instance.Play("Draw");
-        }
-        if (Input.GetKey(KeySetting.keys[KeyAction.Shoot]))
-        {
-            anim.SetBool("IsReady", true);
-            PState.states[PlayerState.draw] = true;
-            angle += Time.deltaTime;
-        }
-        if (Input.GetKeyUp(KeySetting.keys[KeyAction.Shoot]))
-        {
-            SoundManager.Instance.Stop("Draw");
-            SoundManager.Instance.Play("ArrowShot");
-            anim.SetBool("IsReady", false);
-            if (angle > 1f)
+            if (Input.GetKeyDown(KeySetting.keys[KeyAction.Shoot]))
             {
-                angle = 0.99f;
+                SoundManager.Instance.Play("Draw");
             }
-            ArrowFire();
-            angle = -0.5f;
-            PState.states[PlayerState.draw] = false;
+            if (Input.GetKey(KeySetting.keys[KeyAction.Shoot]))
+            {
+                anim.SetBool("IsReady", true);
+                PState.states[PlayerState.draw] = true;
+                angle += Time.deltaTime;
+            }
+            if (Input.GetKeyUp(KeySetting.keys[KeyAction.Shoot]))
+            {
+                SoundManager.Instance.Stop("Draw");
+                SoundManager.Instance.Play("ArrowShot");
+                anim.SetBool("IsReady", false);
+                if (angle > 1f)
+                {
+                    angle = 0.99f;
+                }
+                ArrowFire();
+                angle = -0.5f;
+                PState.states[PlayerState.draw] = false;
 
 
+            }
         }
     }
 
     void ArrowFire()
     {
+        PlayerManage.Instance.arrow--;
         Vector3 pos = transform.position;
         pos.x += PlayerManage.Instance.dir * 0.2f;
-        GameObject Arrow = Instantiate(arrow, pos, Quaternion.identity);
-        Arrow.GetComponent<AProjectile>().angle = angle;
+        //GameObject Arrow = Instantiate(arrow, pos, Quaternion.identity);
+        ObjectPoolManager.Instance.Get("Arrow", pos, Quaternion.identity, angle);
     }
 }

@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.XR;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    
+    public List<int> children = new List<int>();
+
+
     protected EnemyManage enemy;
     private IAttack attackBehavior;
     private IMove moveBehavior;
@@ -12,6 +17,7 @@ public class EnemyBehavior : MonoBehaviour
     private IDie dieBehavior;
     private IEtc etc;
     private IBreak attackBreak;
+    private IMBreak moveBreak;
 
     Animator anim;
 
@@ -39,6 +45,7 @@ public class EnemyBehavior : MonoBehaviour
         dieBehavior = GetComponent<IDie>();
         etc = GetComponent<IEtc>();
         attackBreak = GetComponent<IBreak>();
+        moveBreak = GetComponent<IMBreak>();
 
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -89,16 +96,26 @@ public class EnemyBehavior : MonoBehaviour
 
     void Living()
     {
+        HitBehavior();
         switch (life)
         {
             case EnemyLife.living:
                 Behavior();
-                HitBehavior();
+                
                 break;
-            case EnemyLife.dying: 
+            case EnemyLife.dying:
                 if (dieBehavior != null)
                 {
-                    dieBehavior.Die();
+                    if (attackBreak != null)
+                    {
+                        attackBreak.Break();
+                    }
+                    if (moveBreak != null)
+                    {
+                        moveBreak.MBreak();
+                    }
+                    dieBehavior.Die(children);
+
                 }
                 break;
         }
@@ -111,6 +128,10 @@ public class EnemyBehavior : MonoBehaviour
             case EnemyHitState.idle:
                 break;
             case EnemyHitState.hitting:
+                if (moveBreak != null)
+                {
+                    moveBreak.MBreak();
+                }
                 if (check == false)
                 {
                     if (hitBehavior != null)
@@ -136,5 +157,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+
+    
 }
 

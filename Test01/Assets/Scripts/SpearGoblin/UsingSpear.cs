@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UsingSpear : MonoBehaviour
+public class UsingSpear : Pooler
 {
-    Pooler pooler;
+    [SerializeField] string objName;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
-        pooler = GetComponent<Pooler>();
-        Destroy(gameObject, 5f);
-        
+        StartCoroutine(Wait());
     }
 
     // Update is called once per frame
@@ -19,14 +17,10 @@ public class UsingSpear : MonoBehaviour
         
     }
 
-    private void OnEnable()
-    {
-        //StartCoroutine(Wait());
-    }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5f);
-        pooler.ReleaseObject();
+        yield return new WaitForSeconds(7f);
+        ObjectPoolManager.Instance.ReleaseOnPull(objName, key);
     }
 }

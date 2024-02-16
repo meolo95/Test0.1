@@ -368,7 +368,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07011175, y: 0.0080899}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -842,7 +842,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.07011175, y: 0.0080899}
+  m_Offset: {x: -0.07011175, y: 0.040165186}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -853,7 +853,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.45977652, y: 1.0916845}
+  m_Size: {x: 0.45977652, y: 0.9143281}
   m_EdgeRadius: 0
 --- !u!114 &1027610904210395748
 MonoBehaviour:
@@ -867,6 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 8213590663172417412}
 --- !u!1 &7752205604345814332
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,7 +1115,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  children: 
+  health: 5
   state: 0
   life: 0
   hitState: 0
@@ -1133,6 +1135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4060919927699297612, guid: d11fbe0187f473b42952c1ce534f35d2, type: 3}
+  objName: FireProjectile
   delay: 5
 --- !u!114 &4832697665600791601
 MonoBehaviour:

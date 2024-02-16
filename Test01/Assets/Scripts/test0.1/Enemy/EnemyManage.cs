@@ -24,7 +24,7 @@ public interface IHit
 }
 public interface IDie
 {
-    void Die();
+    void Die(List<int> children);
 }
 public interface IEtc
 {
@@ -33,6 +33,10 @@ public interface IEtc
 public interface IBreak
 {
     void Break();
+}
+public interface IMBreak
+{
+    void MBreak();
 }
 
 public enum EnemyState

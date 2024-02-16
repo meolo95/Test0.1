@@ -251,10 +251,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  children: 
+  health: 5
   state: 0
   life: 0
-  hitState: 1
+  hitState: 0
   check: 0
   isDevine: 0
 --- !u!114 &6046925244352981660
@@ -270,6 +271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1075668756959236013, guid: 8af2411927be52b41a9958fe5b0757a8, type: 3}
+  objName: GoblinSpear
   delay: 5
 --- !u!114 &5835345414719114471
 MonoBehaviour:
@@ -308,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad0d88a3dc7eb5b4880d0a344513eee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 0.5
 --- !u!1 &7418465558237198389
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,3 +482,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 6355474800614662928}

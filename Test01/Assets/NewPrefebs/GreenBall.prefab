@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6371123704658773183
 Transform:
   m_ObjectHideFlags: 0
@@ -184,6 +184,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def3904d0b90a7c418609975903f684c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
   speed: 7
   rotate: 90
 --- !u!114 &7581590572224963465
@@ -198,3 +199,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8b670b496d31448b87d7152bba0a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objName: GreenBall

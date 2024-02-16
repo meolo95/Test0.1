@@ -535,7 +535,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  children: 
+  health: 6
   state: 0
   life: 0
   hitState: 0
@@ -554,6 +555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 3691266155937544463, guid: 971d91365b8e1e2499d7db8d4cf6e429, type: 3}
+  objName: IceBall
   delay: 5
 --- !u!114 &2414527501786761421
 MonoBehaviour:
@@ -1203,6 +1205,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 8182203267069962402}
 --- !u!1 &7751793479900579808
 GameObject:
   m_ObjectHideFlags: 0

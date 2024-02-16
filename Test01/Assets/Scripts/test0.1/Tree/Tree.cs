@@ -190,7 +190,7 @@ public class DieBehavior : Node
     }
     public bool Execute()
     {
-        die.Die();
+        //die.Die();
         return true;
     }
 }

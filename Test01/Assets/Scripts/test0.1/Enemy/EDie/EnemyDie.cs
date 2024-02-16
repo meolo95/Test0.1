@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Unity.VisualScripting.Metadata;
 
-public class EnemyDie : EnemyManage, IDie
+public class EnemyDie : ArrowReset, IDie
 {
-    public void Die()
+    public void Die(List<int> children)
     {
         if (IEDie == null)
         {
+            lists = children;
             DieStart();
         }
     }
@@ -26,9 +28,14 @@ public class EnemyDie : EnemyManage, IDie
 
     IEnumerator WaitDie()
     {
+        transform.GetChild(0).gameObject.SetActive(false);
         PlayerLocation.Instance.kills++;
         AnimSetTrue("IsDie");
         yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
+        Ref(lists);
+        gameObject.SetActive(false);
     }
+
+    
+    
 }

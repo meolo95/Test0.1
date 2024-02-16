@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  children: 
   health: 5
   state: 0
   life: 0
@@ -572,6 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 0}
 --- !u!1 &3256163260857736267
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  children: 
   health: 20
   state: 2
   life: 0
@@ -1691,6 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 8749498426740689368}
 --- !u!1 &8309021142886978909
 GameObject:
   m_ObjectHideFlags: 0

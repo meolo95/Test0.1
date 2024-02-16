@@ -44,6 +44,7 @@ public class MainMenu : MonoBehaviour
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         string nextScene = "Stage1";
         PlayerLocation.Instance.isPlay = true;
+        Stager.Instance.isPlay = true;
         Time.timeScale = 1;
         KeyManager.Instance.SetMain(false);
         SceneManager.LoadScene(nextScene);

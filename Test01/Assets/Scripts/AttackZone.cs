@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackZone : MonoBehaviour
+public class AttackZone : Pooler
 {
     [SerializeField] public int demage;
     public bool isUsed = false;
@@ -25,5 +25,7 @@ public class AttackZone : MonoBehaviour
     {
 
     }
+
+    
 
 }

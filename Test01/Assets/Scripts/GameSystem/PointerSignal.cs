@@ -23,7 +23,7 @@ public class PointerSignal : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            isSpawn = true;
+            //isSpawn = true;
         }
     }
 

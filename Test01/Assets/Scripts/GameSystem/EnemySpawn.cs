@@ -13,7 +13,7 @@ public class EnemySpawn : MonoBehaviour
     [SerializeField] Transform[] point;
     [SerializeField] GameObject[] pointer;
 
-    void Start()
+    void Awake()
     {
         //spawnPos = new List<Vector3>();
         //GameObject NewEnemy;
@@ -21,10 +21,19 @@ public class EnemySpawn : MonoBehaviour
         //Instantiate(NewEnemy, spawnPos, Quaternion.identity);
 
 
-        foreach (var i in point)
+        foreach (var i in pointer)
         {
-            //GameObject enemyObject = Instantiate(enemy, i.position, Quaternion.identity);
-            //enemyObject.SetActive(false);
+            if (i.GetComponent<PointerSignal>().level <= KeyManager.Instance.level)
+            {
+                Vector3 pos = i.transform.position;
+                pos.z = 1f;
+                GameObject enemyObject = Instantiate(enemy, pos, Quaternion.identity);
+                i.SetActive(false);
+            }
+            else
+            {
+                i.SetActive(false);
+            }
         }
 
         //Destroy(gameObject, 0.1f);
@@ -33,25 +42,7 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        foreach(var i in pointer)
-        {
-            if (i.GetComponent<PointerSignal>().isSpawn == true)
-            {
-                if (i.GetComponent <PointerSignal>().level <= KeyManager.Instance.level)
-                {
-                    Vector3 pos = i.transform.position;
-                    pos.z = 1f;
-                    GameObject enemyObject = Instantiate(enemy, pos, Quaternion.identity);
-                    i.GetComponent<PointerSignal>().isSpawn = false;
-                    i.SetActive(false);
-                }
-                else
-                {
-                    i.SetActive(false);
-                }
-                
-            }
-        }
+        
         
 
     }

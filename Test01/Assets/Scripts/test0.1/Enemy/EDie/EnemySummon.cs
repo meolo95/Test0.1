@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class EnemySummon : MonoBehaviour, IDie
+public class EnemySummon : ArrowReset, IDie
 {
     [SerializeField] GameObject monster;
-    public void Die()
+    
+    public void Die(List<int> children)
     {
         if (IESummon == null)
         {
+            lists = children;
             SummonStart();
         }
     }
@@ -28,8 +31,10 @@ public class EnemySummon : MonoBehaviour, IDie
     IEnumerator WaitSummon()
     {
         PlayerLocation.Instance.kills++;
-        yield return new WaitForSeconds(3f);
+        AnimSetTrue("IsDie");
         Instantiate(monster, transform.position, Quaternion.identity);
+        Ref(lists);
+        yield return new WaitForSeconds(3f);
         Destroy(gameObject);
     }
 }

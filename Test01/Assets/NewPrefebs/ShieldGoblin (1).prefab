@@ -184,6 +184,7 @@ GameObject:
   - component: {fileID: 2710054010811942952}
   - component: {fileID: 1134968652309177377}
   - component: {fileID: 2094295817721509297}
+  - component: {fileID: -4916506329171555647}
   m_Layer: 7
   m_Name: ShieldGoblin (1)
   m_TagString: Enemy
@@ -336,7 +337,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  children: 
+  health: 5
   state: 0
   life: 0
   hitState: 0
@@ -397,6 +399,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   isSense: 0
+--- !u!114 &-4916506329171555647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448368469912988604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e857757f99a32c848b1dc698e0027232, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1703697243131275940
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +476,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 1
   m_UsedByComposite: 0
-  m_Offset: {x: -0.12676668, y: -0.04388094}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -473,7 +487,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.52218723, y: 1.1657724}
+  m_Size: {x: 0.52218723, y: 1.3}
   m_EdgeRadius: 0
 --- !u!251 &4396506188279540176
 PlatformEffector2D:
@@ -825,6 +839,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 1037559067870761394}
 --- !u!1 &3692388617054520452
 GameObject:
   m_ObjectHideFlags: 0

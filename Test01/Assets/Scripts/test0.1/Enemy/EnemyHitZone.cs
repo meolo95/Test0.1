@@ -6,6 +6,7 @@ using UnityEngine;
 public class EnemyHitZone : MonoBehaviour
 {
     EnemyBehavior behavior;
+    [SerializeField] Transform trans;
 
     private void Awake()
     {
@@ -26,22 +27,20 @@ public class EnemyHitZone : MonoBehaviour
                         attackZone.isUsed = true;
                         if (behavior.isDevine != true)
                         {
+                            
+                            if (attackZone.usedArrow != null)
+                            {
+                                Vector3 hitpos = collision.transform.position;
+                                hitpos += collision.transform.right * 0.2f;
+                                GameObject usedArrows = ObjectPoolManager.Instance.Get("UsedArrow", hitpos, collision.transform.rotation, 0);
+                                usedArrows.transform.SetParent(trans, true);
+                                usedArrows.GetComponent<UsedArrow>().isEnemy = true;
+                                behavior.children.Add(usedArrows.GetComponent<Pooler>().key);
+                                ObjectPoolManager.Instance.ReleaseOnPull("Arrow", attackZone.key);
+                            }
                             behavior.hitState = EnemyHitState.hitting;
                             behavior.check = false;
                             behavior.EnemyManage(-attackZone.demage);
-                            if (attackZone.usedArrow != null)
-                            {
-                                GameObject sharedParent = new GameObject("Father");
-                                sharedParent.transform.position = collision.gameObject.transform.position;
-                                sharedParent.transform.rotation = collision.gameObject.transform.rotation;
-                                sharedParent.transform.SetParent(gameObject.transform);
-                                Vector3 hitpos = collision.transform.position;
-                                hitpos += collision.transform.right * 0.2f;
-                                GameObject newArrows = Instantiate(attackZone.usedArrow, hitpos, collision.transform.rotation);
-                                newArrows.transform.SetParent(sharedParent.transform, true);
-                                Destroy(collision.gameObject);
-                            }
-
 
                             delayStop();
                             delayStart();
@@ -52,8 +51,8 @@ public class EnemyHitZone : MonoBehaviour
                             {
                                 Vector3 hitpos = collision.transform.position;
                                 hitpos += collision.transform.right * 0.2f;
-                                GameObject newArrows = Instantiate(attackZone.blockedArrow, hitpos, collision.transform.rotation);
-                                Destroy(collision.gameObject);
+                                GameObject newArrows = ObjectPoolManager.Instance.Get("BlockedArrow", hitpos, collision.transform.rotation, transform.position.x);
+                                ObjectPoolManager.Instance.ReleaseOnPull("Arrow", attackZone.key);
 
                             }
                         }
@@ -82,7 +81,7 @@ public class EnemyHitZone : MonoBehaviour
 
     IEnumerator delay()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(1f);
         behavior.hitState = EnemyHitState.idle;
 
     }

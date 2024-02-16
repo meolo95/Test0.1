@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System.Xml.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Pool;
+using UnityEngine.UIElements;
 
 public class PoolManager : MonoBehaviour
 {
@@ -81,6 +84,12 @@ public class PoolManager : MonoBehaviour
         poolGo.SetActive(true);
     }
 
+    void SetNormal(GameObject poolGo, Vector3 pos, Quaternion rot)
+    {
+        poolGo.transform.position = pos;
+        poolGo.transform.rotation = rot;
+    }
+
     private void OnReturnedToPool(GameObject poolGo)
     {
         poolGo.SetActive(false);
@@ -100,7 +109,28 @@ public class PoolManager : MonoBehaviour
             return null;
         }
 
+        GameObject go = objectPoolDic[goName].Get();
         return objectPoolDic[goName].Get();
     }
+
+
+    public GameObject ProjectileGo(string goName, Vector3 pos, Quaternion rot, float angle)
+    {
+        objectName = goName;
+
+        if (goDic.ContainsKey(goName) == false)
+        {
+            return null;
+        }
+
+        GameObject go = objectPoolDic[goName].Get();
+        go.transform.position = pos;
+        go.transform.rotation = rot;
+        go.GetComponent<AProjectile>().angle = angle;
+        return go;
+    }
+
+
+    //public GameObject ArrowShow(string name, float angle, Vector)
 
 }

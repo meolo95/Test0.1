@@ -12,14 +12,13 @@ GameObject:
   - component: {fileID: 3838610392511238626}
   - component: {fileID: 5317091952740347743}
   - component: {fileID: 2857631071728583431}
-  - component: {fileID: 6342462939408334840}
   m_Layer: 0
   m_Name: UsedGoblinArrow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5417215067719400232
 Transform:
   m_ObjectHideFlags: 0
@@ -144,15 +143,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f62f9ca0f71a004bbcda5cfa0ea0bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6342462939408334840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1582163873033005419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3208bca508dfed84bb83b90ec6b54854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  key: 0
+  objName: UsedGoblinArrow

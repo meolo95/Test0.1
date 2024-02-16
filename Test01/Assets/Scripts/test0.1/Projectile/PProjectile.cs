@@ -6,7 +6,7 @@ public interface IRotable
 {
     void Rotable();
 }
-public class PProjectile : MonoBehaviour
+public class PProjectile : Pooler
 {
     protected Rigidbody2D rigid;
     protected Animator anim;
@@ -17,6 +17,10 @@ public class PProjectile : MonoBehaviour
     {
         rigid = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+    }
+
+    protected virtual void OnEnable()
+    {
         playerPos = PlayerManage.Instance.PlayerPosition();
     }
 

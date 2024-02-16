@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 3239032998027887700}
 --- !u!1 &3257740719269994003
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  children: 
   health: 5
   state: 2
   life: 0
@@ -297,6 +299,7 @@ MonoBehaviour:
   y: 0
   speed: 5
   knife: {fileID: 2184362850124228493, guid: 7ccd277b81a14d64d92cb30d340c9a6c, type: 3}
+  objName: Sword
 --- !u!1 &5517190536600173420
 GameObject:
   m_ObjectHideFlags: 0

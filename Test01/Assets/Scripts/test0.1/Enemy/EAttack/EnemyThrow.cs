@@ -5,18 +5,12 @@ using UnityEngine;
 public class EnemyThrow : EnemyManage, IAttack, IBreak
 {
     [SerializeField] GameObject projectile;
+    [SerializeField] string objName;
     [SerializeField] float delay;
 
     public void Attack()
     {
-        if (transform.position.x < PlayerManage.Instance.PlayerPosition().x)
-        {
-            transform.localScale = new Vector2(1f, 1f);
-        }
-        else if (transform.position.x > PlayerManage.Instance.PlayerPosition().x)
-        {
-            transform.localScale = new Vector2(-1f, 1f);
-        }
+        
         if (IEThrow == null)
         {
             ThrowStart();
@@ -53,8 +47,17 @@ public class EnemyThrow : EnemyManage, IAttack, IBreak
     {
         AnimSetTrue("IsReady");
         yield return new WaitForSeconds(delay);
+        if (transform.position.x < PlayerManage.Instance.PlayerPosition().x)
+        {
+            transform.localScale = new Vector2(1f, 1f);
+        }
+        else if (transform.position.x > PlayerManage.Instance.PlayerPosition().x)
+        {
+            transform.localScale = new Vector2(-1f, 1f);
+        }
         AnimSetTrue("IsAttack");
-        Instantiate(projectile, transform.position, Quaternion.identity);
+        //Instantiate(projectile, transform.position, Quaternion.identity);
+        ObjectPoolManager.Instance.Get(objName, transform.position, Quaternion.identity, 0f);
         yield return new WaitForSeconds(0.3f);
         IEThrow = null;
     }

@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 5829950480406120452}
   - component: {fileID: 8072477036066362640}
   - component: {fileID: 2443949023704249121}
+  - component: {fileID: -1645751776683518555}
   m_Layer: 9
   m_Name: IceBall
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5714634862232611912
 Transform:
   m_ObjectHideFlags: 0
@@ -173,7 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b935e17af1130814886548e5e08cbb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  key: 0
+  speed: 10
 --- !u!114 &2443949023704249121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,6 +188,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d9b860b05323c469ee3468b25ce100, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1645751776683518555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3691266155937544463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed067a8b042faa94fba3ac8d91397f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objName: IceBall
 --- !u!1 &8564606429387182261
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,6 +8,12 @@ public class FireStraight : StraightPro
     protected override void Awake()
     {
         base.Awake();
+        
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
         float angle = Mathf.Atan2(playerPos.y - transform.position.y, playerPos.x - transform.position.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, angle + rotate);
     }

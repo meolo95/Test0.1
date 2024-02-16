@@ -16,6 +16,12 @@ public class ParabolaPro : PProjectile
     protected override void Awake()
     {
         base.Awake();
+        
+    }
+
+    protected override void OnEnable()
+    {
+        base.OnEnable();
         Move();
     }
 

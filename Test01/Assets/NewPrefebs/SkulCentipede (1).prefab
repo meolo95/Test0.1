@@ -2674,6 +2674,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 6150970160623042397}
 --- !u!1 &5420416700540224088
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,6 +3916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  children: 
   health: 15
   state: 0
   life: 0
@@ -3934,6 +3936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spike: {fileID: 20829848673492884, guid: 11cadd6b91b9f2649942a103ecbd903d, type: 3}
+  objName: SCSpike
 --- !u!114 &981582186152398118
 MonoBehaviour:
   m_ObjectHideFlags: 0

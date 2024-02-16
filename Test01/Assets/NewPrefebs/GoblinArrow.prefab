@@ -103,7 +103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2787033000170681200
 Transform:
   m_ObjectHideFlags: 0
@@ -256,6 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce82f2234a564444bb9396fecb648d90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
   speed: 10
   ySpeed: 10
 --- !u!114 &1545030373389582707
@@ -283,3 +284,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usedProjectile: {fileID: 1582163873033005419, guid: 487053cf4593ca0449317b29c8aa5891, type: 3}
+  objName: GoblinArrow
+  usedObjName: UsedGoblinArrow

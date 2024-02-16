@@ -1,15 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Pool;
 
-public class Pooler : MonoBehaviour
+public class HitMob
 {
-    public IObjectPool<GameObject> Pool {  get; set; }
 
-    public void ReleaseObject()
+    private void Awake()
     {
-        Pool.Release(gameObject);
     }
 
     // Start is called before the first frame update

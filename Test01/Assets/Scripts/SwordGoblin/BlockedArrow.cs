@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BlockedArrow : MonoBehaviour
+public class BlockedArrow : Pooler
 {
     public Rigidbody2D rigid;
     public float enemyX;
-    public bool isDrop = false;
+    public bool isDrop = true;
     [SerializeField] float rotateSpeed = 1000f;
     Vector2 power;
     public int num = 1;
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         if (isDrop == false)
         {
@@ -46,8 +46,9 @@ public class BlockedArrow : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            PlayerLocation.Instance.UseArrow(num);
-            Destroy(gameObject);
+            PlayerManage.Instance.arrow++;
+            ObjectPoolManager.Instance.ReleaseOnPull("BlockedArrow", key);
+            //Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "Platform")

@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4596954695334523635
 Transform:
   m_ObjectHideFlags: 0
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def3904d0b90a7c418609975903f684c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
   speed: 20
   rotate: 30
 --- !u!114 &-4984828609572253053
@@ -214,6 +215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usedProjectile: {fileID: 5877193640771593484, guid: 9c3d449281e708548ad78ecac25f5783, type: 3}
+  objName: SCSpike
+  usedObjName: UsedSCSpike
 --- !u!1 &1040728145612416608
 GameObject:
   m_ObjectHideFlags: 0

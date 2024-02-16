@@ -14,13 +14,14 @@ GameObject:
   - component: {fileID: 527479592680819979}
   - component: {fileID: -8765654791712467688}
   - component: {fileID: -2509599447689192401}
+  - component: {fileID: -5171737345290985078}
   m_Layer: 0
   m_Name: GoblinAxe
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8144512918729999259
 Transform:
   m_ObjectHideFlags: 0
@@ -185,4 +186,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b935e17af1130814886548e5e08cbb76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
   speed: 10
+--- !u!114 &-5171737345290985078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852496657022500951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed067a8b042faa94fba3ac8d91397f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objName: GoblinAxe

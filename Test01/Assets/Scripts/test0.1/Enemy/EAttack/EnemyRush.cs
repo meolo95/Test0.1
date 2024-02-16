@@ -40,8 +40,11 @@ public class EnemyRush : EnemyManage, IAttack
     }
     void RushStop()
     {
-        IERush = Rush();
-        StopCoroutine(IERush);
+        if (IERush != null)
+        {
+            StopCoroutine(IERush);
+            IERush = null;
+        }
     }
 
     IEnumerator Rush()
@@ -49,7 +52,7 @@ public class EnemyRush : EnemyManage, IAttack
         while (rayHit.collider == null)
         {
             AnimSetTrue("IsAttack");
-            rayPos = transform.position;
+            rayPos = transform.position + new Vector3(0f, -0.2f, 0f);
             if (isRight)
             {
                 rayHit = Physics2D.Raycast(rayPos, Vector3.left, -1f, LayerMask.GetMask("Platform"));

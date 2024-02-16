@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 9164162664922212335}
 --- !u!1 &3409394664692225453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1327,7 +1328,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
+  children: 
+  health: 6
   state: 0
   life: 0
   hitState: 0
@@ -1346,6 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 6476819078768807028, guid: 478247b7b38caa04bbbbc694ee6ddbb2, type: 3}
+  objName: GoblinArrow
   delay: 3
 --- !u!114 &3415125952013825079
 MonoBehaviour:

@@ -18,13 +18,13 @@ public class BackGround : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (PlayerLocation.Instance.PlayerPosition().x  > transform.position.x)
+        if (PlayerManage.Instance.PlayerPosition().x  > transform.position.x)
         {
             var nextPos = transform.position;
             nextPos.x += 55f;
             back2.transform.position = nextPos;
         }
-        if (PlayerLocation.Instance.PlayerPosition().x < transform.position.x)
+        if (PlayerManage.Instance.PlayerPosition().x < transform.position.x)
         {
             var nextPos = transform.position;
             nextPos.x -= 55f;

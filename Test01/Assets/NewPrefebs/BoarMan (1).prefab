@@ -928,7 +928,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.3372137, y: -0.048996866}
+  m_Offset: {x: -0.5590892, y: -0.063847065}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -939,7 +939,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.3977393, y: 1.443854}
+  m_Size: {x: 0.8500395, y: 1.1468601}
   m_EdgeRadius: 0
 --- !u!114 &1620952551973153999
 MonoBehaviour:
@@ -953,6 +953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 4016713039848089052}
 --- !u!1 &7291849363721466805
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 30
+  children: 
+  health: 16
   state: 0
   life: 0
   hitState: 0

@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  children: 
   health: 1
   state: 0
   life: 0
@@ -171,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 2773133977332307773, guid: 13240ed700709e541ab2b1b677233274, type: 3}
+  objName: GreenBall
   delay: 1
 --- !u!114 &3253160649475057421
 MonoBehaviour:
@@ -343,7 +345,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.06740702}
+  m_Offset: {x: 0, y: 0.046190295}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -354,7 +356,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7992176, y: 0.57367384}
+  m_Size: {x: 0.7992176, y: 0.34219307}
   m_EdgeRadius: 0
 --- !u!114 &7336281729779832496
 MonoBehaviour:
@@ -368,3 +370,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 7132098778530638258}

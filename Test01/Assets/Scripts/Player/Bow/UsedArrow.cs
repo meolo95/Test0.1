@@ -2,15 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UsedArrow : MonoBehaviour
+public class UsedArrow : Pooler
 {
     public bool isEnemy;
-    Pooler pooler;
-    public bool isGround;
     // Start is called before the first frame update
     void Start()
     {
-        pooler = GetComponent<Pooler>();
     }
 
     // Update is called once per frame
@@ -25,16 +22,8 @@ public class UsedArrow : MonoBehaviour
     {
         if (collision.tag == "Player" && isEnemy == false)
         {
-            PlayerLocation.Instance.UseArrow(1);
-            if (isGround)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                //pooler.ReleaseObject();
-                Destroy(gameObject);
-            }
+            PlayerManage.Instance.arrow++;
+            ObjectPoolManager.Instance.ReleaseOnPull("UsedArrow", key);
         }
     }
 }

@@ -13,16 +13,15 @@ GameObject:
   - component: {fileID: 1420394057594322753}
   - component: {fileID: 8189983141141872230}
   - component: {fileID: 7323968509584591692}
-  - component: {fileID: 1955035499789001377}
   - component: {fileID: -8810538709736968301}
-  - component: {fileID: 4876793111823876494}
+  - component: {fileID: -3750461038505104762}
   m_Layer: 0
   m_Name: FireProjectile
   m_TagString: Projectile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3076368501549412342
 Transform:
   m_ObjectHideFlags: 0
@@ -174,18 +173,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1955035499789001377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4060919927699297612}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3208bca508dfed84bb83b90ec6b54854, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-8810538709736968301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,9 +185,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def3904d0b90a7c418609975903f684c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
   speed: 7
   rotate: 90
---- !u!114 &4876793111823876494
+--- !u!114 &-3750461038505104762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,10 +197,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4060919927699297612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef75de225856a4a4c837a6b6b060fe05, type: 3}
+  m_Script: {fileID: 11500000, guid: ac8b670b496d31448b87d7152bba0a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  usedProjectile: {fileID: 0}
+  objName: FireProjectile
 --- !u!1 &7189281606360496582
 GameObject:
   m_ObjectHideFlags: 0

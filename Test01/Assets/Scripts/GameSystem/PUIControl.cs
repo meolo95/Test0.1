@@ -31,7 +31,7 @@ public class PUIControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        arrows.SetText(PlayerLocation.Instance.Arrows().ToString());
+        arrows.SetText(PlayerManage.Instance.arrow.ToString());
     }
 
     public void SetStars()

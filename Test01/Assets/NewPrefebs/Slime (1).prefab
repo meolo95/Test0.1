@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5279729305181189219}
   - component: {fileID: 3217388025704256128}
-  - component: {fileID: 863241693526793423}
+  - component: {fileID: 4474595147150084011}
   m_Layer: 7
   m_Name: TargetZone
   m_TagString: TargetZone
@@ -68,7 +68,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 10
---- !u!114 &863241693526793423
+--- !u!114 &4474595147150084011
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,10 +77,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2760556975648928490}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1a113d7b7fb4bd439e8af7808da2a95, type: 3}
+  m_Script: {fileID: 11500000, guid: ea8eccd0b3457a243ac38d1b1d964ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isEndless: 0
 --- !u!1 &4336193088417014920
 GameObject:
   m_ObjectHideFlags: 0
@@ -146,7 +145,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.063767195, y: -0.4546669}
+  m_Offset: {x: 0.089965105, y: -0.50051343}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -157,7 +156,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.50523555}
+  m_Size: {x: 0.65942717, y: 0.4135425}
   m_EdgeRadius: 0
 --- !u!114 &231408537505402585
 MonoBehaviour:
@@ -171,6 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb1a9cb40bf89b4eb3d0b15ab82eef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  trans: {fileID: 3730631990483746897}
 --- !u!1 &4497690000442368742
 GameObject:
   m_ObjectHideFlags: 0
@@ -283,8 +283,7 @@ GameObject:
   - component: {fileID: 5702773550424556528}
   - component: {fileID: 3696016025080334370}
   - component: {fileID: 9136623757386273228}
-  - component: {fileID: 2728642665869003533}
-  - component: {fileID: 1334348990901540347}
+  - component: {fileID: -1429118910659521205}
   m_Layer: 7
   m_Name: Slime (1)
   m_TagString: Enemy
@@ -422,8 +421,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3752fd823281b9e42a7f9e855117c3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 15
-  state: 0
+  children: 
+  health: 6
+  state: 1
   life: 0
   hitState: 0
   check: 0
@@ -457,7 +457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stun: 6
---- !u!114 &2728642665869003533
+--- !u!114 &-1429118910659521205
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -466,18 +466,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7418113660641675755}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e857757f99a32c848b1dc698e0027232, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1334348990901540347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7418113660641675755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acb4029e18af36e43913cc1abd6cbf64, type: 3}
+  m_Script: {fileID: 11500000, guid: 04a70a343d464a6439ad3df2738e846f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

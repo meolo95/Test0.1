@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHit : EnemyManage, IHit
 {
-    [SerializeField] float stun = 6f;
+    [SerializeField] float stun = 4f;
 
 
     public void Hit()

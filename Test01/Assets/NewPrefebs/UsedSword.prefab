@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5609578785806794119
 Transform:
   m_ObjectHideFlags: 0
@@ -169,3 +169,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f62f9ca0f71a004bbcda5cfa0ea0bfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  key: 0
+  objName: UsedSword
