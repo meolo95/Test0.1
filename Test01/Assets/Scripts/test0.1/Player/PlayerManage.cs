@@ -74,6 +74,7 @@ public enum PlayerLife
 public static class PState 
 { 
     public static Dictionary<PlayerState, bool> states = new Dictionary<PlayerState, bool>();
+
 }
 public class PlayerManage : MonoBehaviour
 {
@@ -83,12 +84,15 @@ public class PlayerManage : MonoBehaviour
     {
         if (Instance == null)
         {
-            Instance = this;
             DontDestroyOnLoad(gameObject);
+            Instance = this;
         }
         else
         {
             Destroy(gameObject);
+            //Destroy(Instance);
+            //Instance = this;
+            //DontDestroyOnLoad(gameObject);
         }
         SetInfo(15, 30, 0);
 
@@ -120,6 +124,7 @@ public class PlayerManage : MonoBehaviour
     public int min = 0;
 
     public bool isPlay;
+    public bool isEnding;
 
 
     public int frozenHp
@@ -180,9 +185,28 @@ public class PlayerManage : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (isPlay)
+        {
+            timer += Time.deltaTime;
+            if (timer >= 60f)
+            {
+                min++;
+                timer = 0f;
+            }
+        }
+    }
+
     void OnStart(Scene scene, LoadSceneMode mode)
     {
-        player.transform.position = new Vector3(-14.7f, -6.7f, 0f);
+        CameraContol.Instance.SetMain();
+        if (player != null)
+        {
+            player.transform.position = new Vector3(-14.7f, -6.7f, 0f);
+            player.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        ObjectPoolManager.Instance.ReleaseAll();
     }
 
     void SetInfo(int h, int a, int fhp)
@@ -199,6 +223,8 @@ public class PlayerManage : MonoBehaviour
 
     public void PlayerReset()
     {
+        ObjectPoolManager.Instance.ReleaseAll();
+        
         PlayerCommand.plife = PlayerLife.live;
         SetInfo(stagehp, 30, 0);
         anim.SetBool("IsDie", false);

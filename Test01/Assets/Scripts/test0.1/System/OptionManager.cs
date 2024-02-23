@@ -83,6 +83,7 @@ public class OptionManager : MonoBehaviour
 
     public void OnClickRestart()
     {
+        ObjectPoolManager.Instance.ReleaseAll();
         isOver = false;
         //PlayerManage.Instance.isPlay = true;
         isMain = false;
@@ -106,6 +107,7 @@ public class OptionManager : MonoBehaviour
 
     public void QuitGame()
     {
+        ObjectPoolManager.Instance.ReleaseAll();
         Time.timeScale = 1;
         isOver = false;
         isMain = true;
@@ -122,6 +124,8 @@ public class OptionManager : MonoBehaviour
         //PlayerLocation.Instance.pManager.SetActive(false);
         //PlayerLocation.Instance.SetMain();
         PlayerManage.Instance.PlayerReset();
+        PlayerManage.Instance.isPlay = false;
+        PlayerManage.Instance.isEnding = false;
         SceneManager.LoadScene(nextScene);
     }
 
@@ -136,6 +140,7 @@ public class OptionManager : MonoBehaviour
 
     public void QuitOverGame()
     {
+        ObjectPoolManager.Instance.ReleaseAll();
         isOver = false;
         isMain = true;
         optionPanel.SetActive(false);
@@ -148,6 +153,7 @@ public class OptionManager : MonoBehaviour
         //PlayerLocation.Instance.SetPlayerNormal();
         //PlayerLocation.Instance.p.SetActive(false);
         //PlayerLocation.Instance.pManager.SetActive(false);
+        PlayerManage.Instance.isPlay = false;
         SceneManager.LoadScene(nextScene);
 
     }

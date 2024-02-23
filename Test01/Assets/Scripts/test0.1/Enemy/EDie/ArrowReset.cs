@@ -10,7 +10,6 @@ public class ArrowReset : EnemyManage
         foreach (var child in children)
         {
             ObjectPoolManager.Instance.ReleaseOnPull("UsedArrow", child);
-            Debug.Log(child);
         }
     }
 }

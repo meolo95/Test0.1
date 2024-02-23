@@ -10,9 +10,12 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
+        //KeyManager.Instance.optionManager.QuitSetting();
+    }
+    private void Start()
+    {
         KeyManager.Instance.SetMain(true);
         KeyManager.Instance.level = 0;
-        //KeyManager.Instance.optionManager.QuitSetting();
     }
 
     // Update is called once per frame

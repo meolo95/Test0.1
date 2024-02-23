@@ -7,6 +7,7 @@ public class EnemyFollow : EnemyManage, IAttack
     [SerializeField] float speed;
     public void Attack()
     {
+
         if (PlayerManage.Instance.PlayerPosition().x < transform.position.x)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);

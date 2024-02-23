@@ -22,11 +22,15 @@ public class TileMapArrow : MonoBehaviour
         GameObject otherObject = collision.gameObject;
         if (collision.TryGetComponent(out AttackZone attackZone))
         {
-            ObjectPoolManager.Instance.ReleaseOnPull("Arrow", attackZone.key);
-            Vector3 hitpos = collision.transform.position;
-            hitpos += collision.transform.right * 0.1f;
+            if (attackZone.usedArrow != null)
+            {
+                ObjectPoolManager.Instance.ReleaseOnPull("Arrow", attackZone.key);
+                Vector3 hitpos = collision.transform.position;
+                hitpos += collision.transform.right * 0.1f;
 
-            ObjectPoolManager.Instance.Get("UsedArrow", hitpos, collision.transform.rotation, 0);
+                ObjectPoolManager.Instance.Get("UsedArrow", hitpos, collision.transform.rotation, 0);
+            }
+            
 
 
         }

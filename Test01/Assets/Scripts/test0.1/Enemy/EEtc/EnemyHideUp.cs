@@ -33,6 +33,7 @@ public class EnemyHideUp : EnemyManage, IEtc
     }
     IEnumerator Cool()
     {
+        SoundManager.Instance.Play("Growl");
         rigid.velocity = new Vector2(0f, 3f);
         Light1.SetActive(true);
         Light2.SetActive(true);

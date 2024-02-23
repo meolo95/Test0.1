@@ -35,6 +35,7 @@ public class PlayerHitByE : PlayerBehaviour, IHit
 
     IEnumerator EHit()
     {
+        PlayerManage.Instance.hits++;
         SetColor(0.6f);
         PState.states[PlayerState.devine] = true;
         rigid.velocity = Vector3.zero;

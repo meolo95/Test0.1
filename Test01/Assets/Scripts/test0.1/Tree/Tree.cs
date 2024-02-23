@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
 using static UnityEngine.RuleTile.TilingRuleOutput;
 
@@ -145,6 +146,20 @@ public class EtcBehavior : Node
     }
 }
 
+public class DetectNode : Node
+{
+    private IFind find;
+    public DetectNode(IFind find)
+    {
+        this.find = find;
+    }
+
+    public bool Execute()
+    {
+        return find.Find();
+    }
+}
+
 public class PlayerDetection : Node
 {
     private Collider2D collider;
@@ -234,15 +249,29 @@ public class HitDetection : MonoBehaviour, Node
                         sharedParent.transform.SetParent(root.gameObject.gameObject.transform);
                         Vector3 hitpos = col.transform.position;
                         hitpos += col.transform.right * 0.2f;
-                        GameObject newArrows = Instantiate(attackZone.usedArrow, hitpos, col.transform.rotation);
+                        //GameObject newArrows = Instantiate(attackZone.usedArrow, hitpos, col.transform.rotation);
+                        GameObject newArrows = ObjectPoolManager.Instance.Get("UsedArrow", hitpos, Quaternion.identity, 0f);
                         newArrows.transform.SetParent(sharedParent.transform, true);
-                        Destroy(col.gameObject);
+                        ObjectPoolManager.Instance.ReleaseOnPull("UsedArrow", attackZone.key);
                     }
                     return true;
                 }
             }
         }
         return false;
+    }
+}
+
+public class HitNode : Node
+{
+    IHDetect hDetect;
+    public HitNode(IHDetect hDetect)
+    {
+        this.hDetect = hDetect;
+    }
+    public bool Execute()
+    {
+        return hDetect.Detect();
     }
 }
 

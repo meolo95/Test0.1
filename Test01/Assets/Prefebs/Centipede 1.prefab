@@ -2568,7 +2568,6 @@ GameObject:
   - component: {fileID: 1632027353176484092}
   - component: {fileID: 3456643071915681695}
   - component: {fileID: 8599960244496924056}
-  - component: {fileID: 8329474507629021341}
   m_Layer: 0
   m_Name: CentiBody (30)
   m_TagString: Projectile
@@ -2748,25 +2747,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   demage: 1
---- !u!251 &8329474507629021341
-PlatformEffector2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4014880588448841187}
-  m_Enabled: 1
-  m_UseColliderMask: 1
-  m_ColliderMask:
-    serializedVersion: 2
-    m_Bits: 64
-  m_RotationalOffset: 0
-  m_UseOneWay: 0
-  m_UseOneWayGrouping: 0
-  m_SurfaceArc: 0
-  m_UseSideFriction: 0
-  m_UseSideBounce: 0
-  m_SideArc: 1
 --- !u!1 &4073292646456693737
 GameObject:
   m_ObjectHideFlags: 0
@@ -5169,8 +5149,6 @@ GameObject:
   - component: {fileID: 8316778567199467166}
   - component: {fileID: 3006739907126329072}
   - component: {fileID: 5336883756643225866}
-  - component: {fileID: 5996138625961284135}
-  - component: {fileID: 8173719696435441703}
   - component: {fileID: 1222360564306190503}
   m_Layer: 0
   m_Name: Head
@@ -5311,44 +5289,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.68
---- !u!114 &5996138625961284135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163018970359449095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c04f9b4c3559c584caacf17963e52fd6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 99
-  obj: {fileID: 7650404105862195287}
-  demage: 1
-  body: {fileID: 6163018970359449095}
-  Shielding: 0
-  isSmall: 0
---- !u!114 &8173719696435441703
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6163018970359449095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 497a6165cd081b84fa368dbb86ccd384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrol: {fileID: 0}
-  speed: 6.5
-  chaseSpeed: 15
-  isTarget: 0
-  isMinus: 1
-  isY: 0
-  playerPos: {x: 0, y: 0, z: 0}
-  thisPos: {x: 0, y: 0, z: 0}
 --- !u!114 &1222360564306190503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6337,7 +6277,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1501985205208329641}
-  - component: {fileID: 2403135294216305469}
   - component: {fileID: 146361328087611350}
   m_Layer: 0
   m_Name: Centipede 1
@@ -6393,24 +6332,6 @@ Transform:
   - {fileID: 3531371808614776744}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2403135294216305469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7650404105862195287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02b2ff3468b22664183f758deec3da33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigid: {fileID: 0}
-  stun: 0
-  isAnim: 0
-  isHit: 0
-  isAlive: 1
-  HitZone: {fileID: 0}
 --- !u!50 &146361328087611350
 Rigidbody2D:
   serializedVersion: 4

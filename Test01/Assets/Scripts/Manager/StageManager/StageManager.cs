@@ -30,8 +30,8 @@ public class StageManager : MonoBehaviour
 
     public void NextStage()
     {
-        
 
+        ObjectPoolManager.Instance.ReleaseAll();
         int currentScene = SceneManager.GetActiveScene().buildIndex;
         int nextScene = currentScene + 1;
 

@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.U2D;
 
-public class BCLightTarget : MonoBehaviour
+public interface IFind
+{
+    bool Find();
+}
+
+public class BCLightTarget : MonoBehaviour , IFind
 {
     [SerializeField] GameObject BC;
 
@@ -18,11 +23,6 @@ public class BCLightTarget : MonoBehaviour
 
     public AudioClip clip;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        StartCoroutine(FindTarget(0.2f));
-    }
 
     IEnumerator FindTarget(float delay)
     {
@@ -33,10 +33,8 @@ public class BCLightTarget : MonoBehaviour
         }
     }
 
-    void FindVisibleTarget()
+    public bool Find()
     {
-        visibleTargets.Clear();
-
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, targetMask);
         Collider2D[] platformViewRadius = Physics2D.OverlapCircleAll(transform.position, viewRadius, obstacleMask);
 
@@ -52,35 +50,43 @@ public class BCLightTarget : MonoBehaviour
                 if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
+                    StartWait();
                 }
             }
         }
-    }
 
-
-    // Update is called once per frame
-    void Update()
-    {
         if (visibleTargets.Count > 0)
         {
-            if (check)
-            {
-                StartCoroutine(Wait());
-            }
+            return true;
         }
-
+        else
+        {
+            return false;
+        }
+        
     }
+
+    void FindVisibleTarget()
+    {
+        visibleTargets.Clear();
+    }
+
+    IEnumerator IEWait;
+
+    void StartWait()
+    {
+        if (IEWait == null)
+        {
+            IEWait = Wait();
+            StartCoroutine(IEWait);
+        }
+    }
+
 
     IEnumerator Wait()
     {
-        check = false;
-        BC.GetComponent<BCMove>().isTarget = true;
-        BC.GetComponent<BCMove>().playerPos = PlayerLocation.Instance.PlayerPosition();
-        BC.GetComponent<BCMove>().thisPos = BC.transform.position;
-        BC.GetComponent<BCMove>().StartCo();
-        SoundManager.Instance.SFXPlay("Growl", clip, 0.7f);
-        yield return new WaitForSeconds(4f);
-        BC.GetComponent<BCMove>().isTarget = false;
-        check = true;
+        yield return new WaitForSeconds(3f);
+        FindVisibleTarget();
+        IEWait = null;
     }
 }

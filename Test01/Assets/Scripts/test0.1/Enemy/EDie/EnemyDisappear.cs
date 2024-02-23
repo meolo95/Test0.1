@@ -28,7 +28,7 @@ public class EnemyDisappear : ArrowReset, IDie
     IEnumerator WaitDie()
     {
         transform.GetChild(0).gameObject.SetActive(false);
-        PlayerLocation.Instance.kills++;
+        PlayerManage.Instance.kills++;
         AnimSetTrue("IsDie");
         Ref(lists);
         yield return new WaitForSeconds(3f);

@@ -26,6 +26,7 @@ public class PlayerHitZone : MonoBehaviour
                     hit.hitObject = other.gameObject;
                     PState.states[PlayerState.hit] = true;
                 }
+                
             }
         }
         

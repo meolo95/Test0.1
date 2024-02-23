@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour
     [SerializeField] Sound[] sounds = null;
 
     [SerializeField] AudioSource[] sources = null;
+    [SerializeField] AudioSource[] spatial = null;
 
 
     private void Awake()
@@ -34,7 +35,25 @@ public class SoundManager : MonoBehaviour
         }
     }
     // Start is called before the first frame update
-    
+
+    public void SummonPlay(string sfxName, Vector3 pos)
+    {
+        for (int i = 0; i < sounds.Length; i++)
+        {
+            if (sounds[i].name == sfxName)
+            {
+                for (int j = 0; j < spatial.Length; j++)
+                {
+                    if (!spatial[j].isPlaying)
+                    {
+                        spatial[j].clip = sounds[i].clip;
+                        AudioSource.PlayClipAtPoint(spatial[j].clip, pos);
+                        return;
+                    }
+                }
+            }
+        }
+    }
 
     public void Play(string sfxName)
     {

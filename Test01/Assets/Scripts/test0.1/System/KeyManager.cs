@@ -25,16 +25,15 @@ public class KeyManager : MonoBehaviour
         }
         else
         {
-            if (Instance != this && Instance != null)
-            {
-                Destroy(gameObject);
-                return;
-            }
+            Destroy(gameObject);
         }
 
         for (int i = 0; i <(int)KeyAction.Hook + 1; i++)
         {
-            KeySetting.keys.Add((KeyAction)i, defaultKeys[i]);
+            if (!KeySetting.keys.ContainsKey((KeyAction)i))
+            {
+                KeySetting.keys.Add((KeyAction)i, defaultKeys[i]);
+            }
         }
         
         optionManager = GetComponent<OptionManager>();

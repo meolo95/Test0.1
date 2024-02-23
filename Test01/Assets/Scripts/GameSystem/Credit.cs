@@ -22,10 +22,10 @@ public class Credit : MonoBehaviour
 
     public void SetCredit()
     {
-        int s = Mathf.FloorToInt(PlayerLocation.Instance.timer);
-        kills.SetText(PlayerLocation.Instance.kills.ToString());
-        hits.SetText(PlayerLocation.Instance.hits.ToString());
-        string m = PlayerLocation.Instance.min.ToString() + ":" + s;
+        int s = Mathf.FloorToInt(PlayerManage.Instance.timer);
+        kills.SetText(PlayerManage.Instance.kills.ToString());
+        hits.SetText(PlayerManage.Instance.hits.ToString());
+        string m = PlayerManage.Instance.min.ToString() + ":" + s;
         clear.SetText(m);
     }
 }

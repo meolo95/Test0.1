@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Stage1
+  m_EditorClassIdentifier: 
+  m_GroupName: Stage1
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 727aa898152fa314f8aca401eb4cd751
+  m_SerializeEntries:
+  - m_GUID: 5f4d2f46c33395f40b5c54de2ccbdaf1
+    m_Address: Assets/NewPrefebs/GoblinRider (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37f06f246dd054349913766bdef686ff
+    m_Address: Assets/NewPrefebs/GoblinMage (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 438b5f36127134d4aa6dc66094cd6482
+    m_Address: Assets/NewPrefebs/GoblinBow (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 53aea550be8b6514d9fe9c1891d57d98
+    m_Address: Assets/NewPrefebs/SpearGoblin (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4a2dcc5748a2b8e468a7db5bea80384a
+    m_Address: Assets/NewPrefebs/ShieldGoblin (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 80619a3e50ab22f409495f2c42f717c8
+    m_Address: Assets/NewPrefebs/AxeGoblin (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 80c6d59782a3ffa429c546651f3e33ea, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: f7413f6dbbdb66b439d87b12da202a41, type: 2}
+    - {fileID: 11400000, guid: 8ee8cccb01f01ba4ea7592f855414c60, type: 2}

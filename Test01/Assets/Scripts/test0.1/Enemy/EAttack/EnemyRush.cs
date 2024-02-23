@@ -52,7 +52,7 @@ public class EnemyRush : EnemyManage, IAttack
         while (rayHit.collider == null)
         {
             AnimSetTrue("IsAttack");
-            rayPos = transform.position + new Vector3(0f, -0.2f, 0f);
+            rayPos = transform.position + new Vector3(0f, -0.5f, 0f);
             if (isRight)
             {
                 rayHit = Physics2D.Raycast(rayPos, Vector3.left, -1f, LayerMask.GetMask("Platform"));

@@ -24,7 +24,10 @@ public class PlayerCommand : MonoBehaviour
     {
         for (int i = 0; i < (int)PlayerState.devine + 1; i++)
         {
-            PState.states.Add((PlayerState)i, false);
+            if (!PState.states.ContainsKey((PlayerState)i))
+            {
+                PState.states.Add((PlayerState)i, false);
+            }
         }
         plife = PlayerLife.live;
         walk = GetComponent<IWalk>();

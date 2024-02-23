@@ -53,7 +53,7 @@
     <UnityVersion>2022.3.8f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.8f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
@@ -95,8 +95,10 @@
     <Compile Include="Assets\Scripts\Obstacle\WeakGround.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EEtc\EnemyHideUp.cs" />
     <Compile Include="Assets\Scripts\test0.1\System\OptionManager.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Tree\EnemyAttack\BCAttack.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EEtc\EnemyDrop.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeTargeting.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Tree\EnemyMove\BCPatrol.cs" />
     <Compile Include="Assets\Scripts\SwordBat\SBAttack.cs" />
     <Compile Include="Assets\Scripts\GoblinRider\GoblinRiderMove.cs" />
     <Compile Include="Assets\Scripts\Player\Spear\SpearProjectile.cs" />
@@ -125,7 +127,6 @@
     <Compile Include="Assets\Scripts\EmemyManager\SideCollision.cs" />
     <Compile Include="Assets\Scripts\PlayerAttack.cs" />
     <Compile Include="Assets\Scripts\test0.1\System\Heart\HeartManager.cs" />
-    <Compile Include="Assets\Scripts\test0.1\Tree\EnemyMove\EnemyTRoaming.cs" />
     <Compile Include="Assets\Scripts\Obstacle\BladeObsMove.cs" />
     <Compile Include="Assets\Scripts\BigSlime\BigSlimeMove.cs" />
     <Compile Include="Assets\Scripts\GameSystem\EnemySpawnByPlayer.cs" />
@@ -161,9 +162,9 @@
     <Compile Include="Assets\Scripts\test0.1\Player\PlayerBehaviour.cs" />
     <Compile Include="Assets\Scripts\test0.1\System\KeyManager.cs" />
     <Compile Include="Assets\Scripts\SpearGoblin\SpearGoblinTargeting.cs" />
-    <Compile Include="Assets\Scripts\test0.1\Tree\EnemyAttack\EnemyTThrow.cs" />
     <Compile Include="Assets\Scripts\WalkingSC\WSC.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EMove\EnemyFlyPatrolThrow.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Tree\HDetect.cs" />
     <Compile Include="Assets\Scripts\BowGoblin\BowGoblinThrow.cs" />
     <Compile Include="Assets\Scripts\Obstacle\WGTrigger.cs" />
     <Compile Include="Assets\Scripts\GreenMushroom\GMTargeting.cs" />
@@ -240,6 +241,7 @@
     <Compile Include="Assets\Scripts\EmemyManager\Throw.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EAttack\EnemyRushJump.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EAttack\EnemyThrow.cs" />
+    <Compile Include="Assets\Scripts\test0.1\SoundRepeat.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EMove\EnemyJump.cs" />
     <Compile Include="Assets\Scripts\GreenMushroom\GMRun.cs" />
     <Compile Include="Assets\Scripts\Player\Bow\BowAttack.cs" />
@@ -252,6 +254,7 @@
     <Compile Include="Assets\Scripts\test0.1\Enemy\EnemyManage.cs" />
     <Compile Include="Assets\Scripts\test0.1\Projectile\ProjectileGround.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EnemyArrowCatch.cs" />
+    <Compile Include="Assets\Scripts\test0.1\Public\AssetManager.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerComp.cs" />
     <Compile Include="Assets\Scripts\test0.1\Enemy\EAttack\EnemyMelee.cs" />
     <Compile Include="Assets\Scripts\test0.1\Projectile\ParabolaPro.cs" />
@@ -940,8 +943,14 @@
     <Reference Include="Unity.Burst.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.ResourceManager">
+      <HintPath>Library\ScriptAssemblies\Unity.ResourceManager.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ScriptableBuildPipeline">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.PixelPerfect.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
@@ -1057,6 +1066,9 @@
     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.InternalAPIEditorBridge.001">
       <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
@@ -1084,8 +1096,8 @@
     <Reference Include="Unity.VisualScripting.State">
       <HintPath>Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
+    <Reference Include="Unity.ScriptableBuildPipeline.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.ScriptableBuildPipeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
@@ -1093,8 +1105,14 @@
     <Reference Include="Unity.2D.Animation.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Addressables">
+      <HintPath>Library\ScriptAssemblies\Unity.Addressables.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.IK.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

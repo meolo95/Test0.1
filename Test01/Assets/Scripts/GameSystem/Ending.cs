@@ -13,9 +13,9 @@ public class Ending : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PlayerLocation.Instance.isEnding)
+        if (PlayerManage.Instance.isEnding)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 
                 KeyManager.Instance.optionManager.QuitGame();
@@ -29,8 +29,8 @@ public class Ending : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            PlayerLocation.Instance.isPlay = false;
-            PlayerLocation.Instance.isEnding = true;
+            PlayerManage.Instance.isPlay = false;
+            PlayerManage.Instance.isEnding = true;
             ending.SetActive(true);
             ending.GetComponent<Credit>().SetCredit();
         }

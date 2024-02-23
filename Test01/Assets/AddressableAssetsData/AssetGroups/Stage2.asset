@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Stage2
+  m_EditorClassIdentifier: 
+  m_GroupName: Stage2
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6182ce3a4ba208c43bd1f98a59dbb476
+  m_SerializeEntries:
+  - m_GUID: 6f45853fe566212469e87a48896fff80
+    m_Address: Assets/NewPrefebs/Spider (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c20d74f17e1ade4181aa90739288d5c
+    m_Address: Assets/NewPrefebs/SkulCentipede (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d4596d23a55d70b45be7f1bfd7709c4b
+    m_Address: Assets/NewPrefebs/SkeletonBow (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2f301528a688f2144b518accbe691d56
+    m_Address: Assets/NewPrefebs/ShieldSkeleton (1).prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 80c6d59782a3ffa429c546651f3e33ea, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 23128119dab153644be64a3599c80640, type: 2}
+    - {fileID: 11400000, guid: c1d8017dc96ce8a4ca47382b01eebd1c, type: 2}

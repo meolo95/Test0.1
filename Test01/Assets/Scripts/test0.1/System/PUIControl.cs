@@ -21,10 +21,7 @@ public class PUIControl : MonoBehaviour
         }
         else
         {
-            if (Instance != this)
-            {
-                return;
-            }
+            Destroy(gameObject);
         }
     }
 

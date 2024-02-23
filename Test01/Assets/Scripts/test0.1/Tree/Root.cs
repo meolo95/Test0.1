@@ -14,6 +14,9 @@ public class Root : MonoBehaviour
     private IEtc etc;
     private IHit hit;
     private IDie die;
+    private IFind find;
+    private IHDetect hDetect;
+
     Collider2D targetCollider;
     Collider2D hitCollider;
     CoolDown cool;
@@ -23,14 +26,16 @@ public class Root : MonoBehaviour
 
     private void Awake()
     {
-        //root = gameObject;
+        root = gameObject;
         move = GetComponent<IMove>();
         attack = GetComponent<IAttack>();
         breakbehavior = GetComponent<IBreak>();
         etc = GetComponent<IEtc>();
         hit = GetComponent<IHit>();
         die = GetComponent<IDie>();
-        targetCollider = transform.GetChild(1).GetComponent<Collider2D>();
+        find = GetComponent<IFind>();
+        hDetect = GetComponentInChildren<IHDetect>();
+        //targetCollider = transform.GetChild(1).GetComponent<Collider2D>();
         hitCollider = transform.GetChild(0).GetComponent<Collider2D>();
         cool = new CoolDown(1.5f);
         hpCheck = new HPManage(hp);
@@ -48,10 +53,10 @@ public class Root : MonoBehaviour
                         ),
                     new Selector(
                         new Sequence(
-                            new PlayerDetection(targetCollider), new AttackBehavior(attack)
+                            new DetectNode(find), new AttackBehavior(attack)
                             ),
                         new Sequence(
-                            new BreakBehavior(breakbehavior), cool, new MoveBehavior(move)
+                            new BreakBehavior(breakbehavior), new MoveBehavior(move)
                             ),
                         new Sequence(
                             new EtcBehavior(etc)

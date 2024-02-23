@@ -10,14 +10,11 @@ public class Bush : MonoBehaviour
     SpriteRenderer spRen;
 
     [SerializeField] GameObject BGM;
-    AudioSource audios;
-    [SerializeField] AudioClip clip;
 
     // Start is called before the first frame update
     void Start()
     {
         spRen = GetComponent<SpriteRenderer>();
-        audios = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -32,8 +29,7 @@ public class Bush : MonoBehaviour
             back.intensity = 0f;
             spRen.color = new Color(1f, 1f, 1f, 0.5f);
             BGM.GetComponent<AudioSource>().volume = 0.33f;
-            SoundManager.Instance.SFXPlay("Hide", clip, 1f);
-            audios.Play();
+            SoundManager.Instance.Play("Bush");
         }
     }
 

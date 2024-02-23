@@ -30,11 +30,11 @@ public class EnemySummon : ArrowReset, IDie
 
     IEnumerator WaitSummon()
     {
-        PlayerLocation.Instance.kills++;
+        PlayerManage.Instance.kills++;
         AnimSetTrue("IsDie");
         Instantiate(monster, transform.position, Quaternion.identity);
         Ref(lists);
         yield return new WaitForSeconds(3f);
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

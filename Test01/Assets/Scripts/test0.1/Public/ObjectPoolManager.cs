@@ -36,6 +36,11 @@ public class ObjectPoolManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
+    }
+
+    private void Start()
+    {
         Init();
     }
 
@@ -78,6 +83,16 @@ public class ObjectPoolManager : MonoBehaviour
         objList[objName].Remove(key);
     }
 
+    public void ReleaseAll()
+    {
+        for (int i = 0; i < objects.Length; i++)
+        {
+            for (int j = 0; j < objects[i].count; j++)
+            {
+                ReleaseOnPull(objects[i].objectName, j);
+            }
+        }
+    }
 
     public void ReleaseOnPull(string objName, int j)
     {
